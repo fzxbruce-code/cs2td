@@ -136,50 +136,6 @@
   #tooltip .tt-paths b{color:#e4ae39;font-size:12px;display:block;margin-bottom:3px;}
   #tooltip .tt-paths .path-item{color:#cdbf9e;font-size:11px;line-height:1.7;}
   #tooltip .tt-paths .path-item .pn{color:#d98a3a;font-weight:800;}
-  /* 左侧军械库·合成列表 */
-  #armory{position:fixed;top:50%;transform:translateY(-50%);left:max(12px,calc(50% - 512px));width:250px;z-index:5;
-    background:linear-gradient(180deg,rgba(32,29,23,.95),rgba(16,13,8,.95));border:1px solid #4a463d;border-radius:8px;
-    box-shadow:0 6px 26px rgba(0,0,0,.55),inset 0 0 24px rgba(0,0,0,.5);color:#d8cbb0;overflow:hidden;}
-  #armory .arm-hd{position:relative;padding:9px 12px 9px 16px;font-weight:900;letter-spacing:3px;font-size:15px;color:#f0e2c0;
-    background:linear-gradient(180deg,#33302a,#211f1a);border-bottom:1px solid #4a463d;text-shadow:0 1px 2px #000;}
-  #armory .arm-hd::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:repeating-linear-gradient(45deg,#d98a3a 0 6px,#1a1712 6px 12px);}
-  #armory .arm-hd span{float:right;font-size:9px;color:#8a7d63;letter-spacing:1px;margin-top:5px;font-weight:700;}
-  #armory .arm-list{list-style:none;margin:0;padding:6px;}
-  #armory .arm-list li{display:flex;align-items:center;gap:8px;padding:6px 7px;border-bottom:1px solid rgba(74,70,61,.35);}
-  #armory .arm-list li:last-child{border-bottom:none;}
-  #armory .arm-list li:nth-child(odd){background:rgba(255,255,255,.02);}
-  #armory .arm-list img{width:28px;height:28px;object-fit:contain;filter:drop-shadow(0 1px 1px #000);background:radial-gradient(circle,#2a2620,#120e08);border:1px solid #4a463d;border-radius:4px;padding:2px;}
-  #armory .cw{color:#e4ae39;font-weight:800;font-size:13px;min-width:48px;white-space:nowrap;text-shadow:0 1px 2px #000;}
-  #armory .ar{color:#6b6153;font-size:12px;}
-  #armory .wn{color:#cdbf9e;font-size:11px;white-space:nowrap;letter-spacing:.3px;}
-  #armory .wn b{color:#d98a3a;font-weight:800;}
-  #armory .arm-list li{flex-wrap:wrap;}
-  #armory .skill{display:block;width:100%;margin-top:2px;font-size:10px;color:#8fbf6a;letter-spacing:.3px;line-height:1.3;}
-  #armory .skill i{color:#c8862e;font-style:normal;font-weight:800;margin-right:3px;}
-  @media(max-width:1080px){#armory{display:none;}}
-  /* 右侧游戏引导面板 */
-  #guide{position:fixed;top:50%;transform:translateY(-50%);right:max(12px,calc(50% - 512px));width:250px;z-index:5;
-    background:linear-gradient(180deg,rgba(32,29,23,.95),rgba(16,13,8,.95));border:1px solid #4a463d;border-radius:8px;
-    box-shadow:0 6px 26px rgba(0,0,0,.55),inset 0 0 24px rgba(0,0,0,.5);color:#d8cbb0;overflow:hidden;}
-  #guide .g-hd{position:relative;padding:9px 12px 9px 16px;font-weight:900;letter-spacing:3px;font-size:15px;color:#f0e2c0;background:linear-gradient(180deg,#33302a,#211f1a);border-bottom:1px solid #4a463d;text-shadow:0 1px 2px #000;}
-  #guide .g-hd::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:repeating-linear-gradient(45deg,#4a8fb5 0 6px,#1a1712 6px 12px);}
-  #guide .g-hd span{float:right;font-size:9px;color:#8a7d63;letter-spacing:1px;margin-top:5px;font-weight:700;}
-  #guide .g-list{padding:8px;display:flex;flex-direction:column;gap:8px;}
-  #guide .g-card{position:relative;background:linear-gradient(180deg,rgba(60,55,46,.5),rgba(26,22,16,.55));border:1px solid #4a463d;border-radius:6px;padding:8px 9px;box-shadow:inset 0 0 12px rgba(0,0,0,.4);}
-  #guide .g-top{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
-  #guide .g-no{font:900 11px "Oswald",sans-serif;color:#e0a24a;background:#26221b;border:1px solid #6b521a;border-radius:3px;padding:1px 5px;letter-spacing:1px;}
-  #guide .g-title{font-size:12px;font-weight:800;color:#e4ae39;letter-spacing:.3px;}
-  #guide .g-demo{display:flex;align-items:center;gap:4px;margin:4px 0 5px;flex-wrap:wrap;}
-  #guide .g-desc{font-size:10.5px;color:#b6a986;line-height:1.5;}
-  #guide .mt{width:20px;height:20px;border:1px solid #6b6252;border-radius:3px;background:linear-gradient(180deg,#e6dcc4,#cbbd9a);color:#2b241c;font:900 12px "KaiTi",serif;display:inline-flex;align-items:center;justify-content:center;position:relative;flex:none;}
-  #guide .mt.raw{color:#e0791a;}
-  #guide .mt.crate{background:linear-gradient(180deg,#7d5631,#573a20);color:#e6c88a;border-color:#3a2614;}
-  #guide .mt .lvb{position:absolute;bottom:-3px;right:-4px;font:700 7px sans-serif;color:#a8791f;background:#fff;border:1px solid #a8791f;border-radius:2px;padding:0 1px;line-height:1.1;}
-  #guide .mop{color:#8a7d63;font-weight:900;font-size:12px;}
-  #guide .men{width:20px;height:20px;border-radius:50%;border:1px solid #6b3030;background:#3a1a1a;color:#e0564a;font:900 11px "KaiTi",serif;display:inline-flex;align-items:center;justify-content:center;flex:none;}
-  #guide .mbadge{font-size:9px;font-weight:800;color:#241a08;background:linear-gradient(180deg,#c79a44,#8a6a20);border:1px solid #6b521a;border-radius:3px;padding:2px 4px;white-space:nowrap;}
-  #guide .mlv{font:800 9px "Oswald",sans-serif;color:#7fae5a;}
-  @media(max-width:1080px){#guide{display:none;}}
   /* 封面主界面 */
   #cover{position:fixed;inset:0;z-index:100;background:radial-gradient(120% 90% at 50% 30%,#241d14,#0c0a06);display:flex;align-items:center;justify-content:center;overflow:hidden;}
   #cover.hide{display:none;}
@@ -375,7 +331,7 @@
     box-shadow:0 4px 12px rgba(255,51,68,.3);transition:transform .15s ease;}
   .bi-close-btn:hover{transform:scale(1.05);box-shadow:0 6px 16px rgba(255,51,68,.5);}
   /* ============ 局外天赋强化 ============ */
-  #talentBtn{position:absolute;right:calc(10% - 10px);width:18%;max-width:72px;min-width:54px;top:74%;height:auto;aspect-ratio:1/1.15;
+  #talentBtn{position:absolute;right:calc(10% - 30px);width:18%;max-width:72px;min-width:54px;top:74%;height:auto;aspect-ratio:1/1.15;
     background:transparent;border:none;cursor:pointer;padding:0;display:flex;flex-direction:column;align-items:center;
     transition:transform .15s;-webkit-tap-highlight-color:transparent;overflow:visible;}
   #talentBtn:active{transform:scale(.94);}
@@ -433,7 +389,7 @@
   #talentHelpBtn:hover,#talentCloseBtn:hover{border-color:#d98a3a;color:#e6ddc8;}
   #talentHelpBtn:active,#talentCloseBtn:active{transform:translateY(2px);box-shadow:0 0 0 #100e0b;}
   #talentGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
-  .tc{display:flex;gap:6px;align-items:stretch;
+  .tc{display:flex;gap:6px;align-items:stretch;height:76px;
     background:linear-gradient(180deg,#2f2a22,#19150e);border:1.5px solid #4a3f2e;border-radius:8px;padding:6px;
     position:relative;box-shadow:inset 0 0 8px rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.3);
     transition:border-color .15s,box-shadow .15s,transform .15s;overflow:hidden;}
@@ -442,25 +398,21 @@
   .tc.can-up:hover{transform:translateY(-1px);}
   .tc.maxed{border-color:#5a7a3a;}
   .tc.maxed::before{background:#5a7a3a;}
-  .tc-icon-wrap{width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;
-    background:radial-gradient(circle at 50% 40%,rgba(228,174,57,.18),rgba(0,0,0,.5) 70%);
-    border:1.5px solid #5c4a24;border-radius:7px;box-shadow:inset 0 0 6px rgba(0,0,0,.6);position:relative;}
-  .tc-icon-wrap::after{content:"";position:absolute;inset:0;border-radius:7px;pointer-events:none;
-    box-shadow:inset 0 0 8px rgba(228,174,57,.15);}
-  .tc-img{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 1px 2px #000);}
+  .tc-img{width:52px;height:52px;flex:none;align-self:center;object-fit:contain;
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.7)) drop-shadow(0 0 6px rgba(228,174,57,.18));}
   .tc-body{flex:1;display:flex;flex-direction:column;justify-content:space-between;min-width:0;gap:3px;}
   .tc-row1{display:flex;align-items:baseline;gap:4px;}
   .tc-name{font:800 10px "Oswald","Microsoft YaHei",sans-serif;color:#e6ddc8;letter-spacing:.5px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;}
   .tc-lv{font:900 10px "Oswald",sans-serif;color:#e4ae39;flex:none;white-space:nowrap;}
   .tc.maxed .tc-lv{color:#7fae5a;}
-  .tc-dots{display:flex;gap:2px;flex-wrap:wrap;}
-  .tc-dot{width:7px;height:7px;border-radius:1.5px;background:#3a3225;border:1px solid #2a2418;}
+  .tc-dots{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;width:100%;}
+  .tc-dot{width:100%;height:6px;border-radius:1.5px;background:#3a3225;border:1px solid #2a2418;}
   .tc-dot.on{background:linear-gradient(180deg,#e4ae39,#b8781e);border-color:#6b521a;
     box-shadow:0 0 4px rgba(228,174,57,.6);}
   .tc.maxed .tc-dot.on{background:linear-gradient(180deg,#7fae5a,#3c5a26);border-color:#3c5a26;
     box-shadow:0 0 4px rgba(127,174,90,.5);}
-  .tc-add{align-self:flex-end;background:linear-gradient(180deg,#d98a3a,#9c5e1c);border:1px solid #6b521a;border-radius:5px;
+  .tc-add{align-self:flex-end;margin-top:auto;background:linear-gradient(180deg,#d98a3a,#9c5e1c);border:1px solid #6b521a;border-radius:5px;
     color:#1a1208;font:900 16px "Oswald",sans-serif;width:24px;height:22px;line-height:1;cursor:pointer;padding:0;flex:none;
     box-shadow:0 2px 0 #4a2e0e,inset 0 1px 0 rgba(255,255,255,.25);transition:transform .12s,box-shadow .12s;}
   .tc-add:hover{filter:brightness(1.1);}
@@ -506,6 +458,114 @@
   #talentHelpPopup.show{display:block;}
   #talentHelpPopup h4{color:#e4ae39;font:800 12px "Oswald","Microsoft YaHei";letter-spacing:1px;margin-bottom:5px;}
   #talentHelpPopup p{color:#b6a986;margin:0;}
+  /* ============ 主界面左下角：玩法 / 图鉴 ============ */
+  .home-left-btns{position:absolute;left:calc(10% - 30px);top:calc(76% + 120px);width:44%;max-width:172px;
+    display:flex;gap:5px;justify-content:space-between;align-items:flex-start;}
+  .hl-btn{width:33.3%;background:transparent;border:none;cursor:pointer;padding:0;display:flex;flex-direction:column;
+    align-items:center;transition:transform .15s;-webkit-tap-highlight-color:transparent;overflow:visible;}
+  .hl-btn:active{transform:scale(.94);}
+  .hl-btn .tb-badge-ic{width:100%;aspect-ratio:1;position:relative;
+    background:
+      radial-gradient(circle at 50% 30%,rgba(228,174,57,.22) 0 38%,transparent 70%),
+      linear-gradient(180deg,#3a362e,#1a1712);
+    border:1.5px solid #6b521a;border-radius:10px;
+    box-shadow:0 3px 7px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(0,0,0,.4);
+    display:flex;align-items:center;justify-content:center;}
+  .hl-btn .tb-badge-ic::before{content:"";position:absolute;left:50%;top:50%;width:124%;height:124%;
+    transform:translate(-50%,-50%);pointer-events:none;z-index:0;
+    background:repeating-conic-gradient(from 0deg,rgba(228,174,57,.10) 0 12deg,transparent 12deg 30deg);
+    border-radius:50%;opacity:.5;}
+  .hl-btn .tb-shield{width:52%;height:52%;position:relative;z-index:1;filter:drop-shadow(0 1px 2px #000) drop-shadow(0 0 4px rgba(228,174,57,.45));}
+  .hl-btn .tb-shield svg{width:100%;height:100%;display:block;}
+  .hl-btn .tb-caption{margin-top:3px;font:800 9px "Oswald","Microsoft YaHei",sans-serif;letter-spacing:1.5px;
+    color:#e6ddc8;text-shadow:0 1px 2px #000;white-space:nowrap;padding-right:2px;}
+  .hl-btn:hover .tb-badge-ic{border-color:#d98a3a;box-shadow:0 6px 16px rgba(217,138,58,.4),inset 0 1px 0 rgba(255,255,255,.15);}
+  /* ============ 通用战术弹窗（玩法 / 图鉴） ============ */
+  .gm-modal{position:fixed;inset:0;z-index:800;display:none;align-items:center;justify-content:center;
+    background:rgba(18,18,18,.92);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:10px;}
+  .gm-modal.show{display:flex;}
+  .gm-panel{width:100%;max-width:440px;max-height:86vh;display:flex;flex-direction:column;position:relative;
+    background:
+      repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 48px),
+      linear-gradient(180deg,rgba(40,32,20,.97),rgba(18,14,8,.97));
+    border:2px solid #5c4a24;border-radius:12px;
+    box-shadow:0 14px 44px rgba(0,0,0,.75),inset 0 0 28px rgba(0,0,0,.55),0 0 0 1px rgba(228,174,57,.12);
+    padding:14px 13px 12px;}
+  .gm-panel::before,.gm-panel::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#b8902e,#3a2a10);border:1px solid #1a1712;box-shadow:inset 0 0 4px #000;z-index:2;}
+  .gm-panel::before{left:6px;top:6px;}.gm-panel::after{right:6px;top:6px;}
+  .gm-hd{display:flex;align-items:center;justify-content:space-between;margin:6px 2px 2px;}
+  .gm-title{font:900 21px "Arial Black","Oswald",sans-serif;letter-spacing:3px;color:#e6ddc8;
+    text-shadow:0 2px 3px #000,0 0 10px rgba(228,174,57,.25);}
+  .gm-title::before{content:"✦ ";color:#e4ae39;text-shadow:0 0 8px rgba(228,174,57,.7);}
+  .gm-close{background:linear-gradient(180deg,#3a362e,#26231d);border:1px solid #5c4a24;border-radius:6px;
+    color:#cdbf9e;font:900 13px sans-serif;width:28px;height:28px;cursor:pointer;line-height:1;padding:0;flex:none;
+    box-shadow:0 2px 0 #100e0b,inset 0 1px 0 rgba(255,255,255,.08);}
+  .gm-close:hover{border-color:#d98a3a;color:#e6ddc8;}
+  .gm-close:active{transform:translateY(2px);box-shadow:0 0 0 #100e0b;}
+  .gm-body{flex:1;overflow-y:auto;margin-top:10px;padding-right:3px;
+    scrollbar-width:thin;scrollbar-color:#5c4a24 rgba(0,0,0,.4);}
+  .gm-body::-webkit-scrollbar{width:6px;}
+  .gm-body::-webkit-scrollbar-track{background:rgba(0,0,0,.4);border-radius:3px;}
+  .gm-body::-webkit-scrollbar-thumb{background:#5c4a24;border-radius:3px;border:1px solid #2a2418;}
+  .gm-body::-webkit-scrollbar-thumb:hover{background:#6b521a;}
+  /* 玩法介绍卡片（复用引导卡片结构） */
+  .g-list{display:flex;flex-direction:column;gap:8px;padding:2px 0;}
+  .g-card{position:relative;background:linear-gradient(180deg,rgba(60,55,46,.55),rgba(26,22,16,.6));border:1px solid #4a463d;border-radius:8px;padding:9px 10px;box-shadow:inset 0 0 12px rgba(0,0,0,.4);}
+  .g-top{display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+  .g-no{font:900 11px "Oswald",sans-serif;color:#e0a24a;background:#26221b;border:1px solid #6b521a;border-radius:3px;padding:1px 5px;letter-spacing:1px;}
+  .g-title{font-size:12px;font-weight:800;color:#e4ae39;letter-spacing:.3px;}
+  .g-demo{display:flex;align-items:center;gap:4px;margin:4px 0 5px;flex-wrap:wrap;}
+  .g-desc{font-size:10.5px;color:#b6a986;line-height:1.5;}
+  .mt{width:22px;height:22px;border:1px solid #6b6252;border-radius:3px;background:linear-gradient(180deg,#e6dcc4,#cbbd9a);color:#2b241c;font:900 13px "KaiTi",serif;display:inline-flex;align-items:center;justify-content:center;position:relative;flex:none;}
+  .mt.raw{color:#e0791a;}
+  .mt.crate{background:linear-gradient(180deg,#7d5631,#573a20);color:#e6c88a;border-color:#3a2614;}
+  .mt .lvb{position:absolute;bottom:-3px;right:-4px;font:700 7px sans-serif;color:#a8791f;background:#fff;border:1px solid #a8791f;border-radius:2px;padding:0 1px;line-height:1.1;}
+  .mop{color:#8a7d63;font-weight:900;font-size:12px;}
+  .men{width:22px;height:22px;border-radius:50%;border:1px solid #6b3030;background:#3a1a1a;color:#e0564a;font:900 12px "KaiTi",serif;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+  .mbadge{font-size:9px;font-weight:800;color:#241a08;background:linear-gradient(180deg,#c79a44,#8a6a20);border:1px solid #6b521a;border-radius:3px;padding:2px 4px;white-space:nowrap;}
+  .mlv{font:800 9px "Oswald",sans-serif;color:#7fae5a;}
+  /* 图鉴：2 列配方卡片 */
+  .codex-grid{display:grid;grid-template-columns:1fr;gap:8px;padding:2px 0;}
+  .cd-card{display:flex;flex-wrap:wrap;align-items:center;gap:7px;
+    background:linear-gradient(180deg,rgba(47,42,34,.62),rgba(25,21,14,.68));border:1px solid #4a3f2e;border-radius:8px;
+    padding:9px 10px 7px;box-shadow:inset 0 0 8px rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.3);}
+  .cd-card[data-tier="GOLD"]{border-color:#e4ae39;box-shadow:0 0 10px rgba(228,174,57,.35),inset 0 0 8px rgba(0,0,0,.5);}
+  .cd-card[data-tier="RED"]{border-color:rgba(235,75,75,.55);box-shadow:0 0 8px rgba(235,75,75,.22),inset 0 0 8px rgba(0,0,0,.5);}
+  .cd-card[data-tier="PINK"]{border-color:rgba(211,44,230,.5);box-shadow:0 0 8px rgba(211,44,230,.2),inset 0 0 8px rgba(0,0,0,.5);}
+  .cd-card[data-tier="BLUE"]{border-color:rgba(75,105,255,.5);box-shadow:0 0 8px rgba(75,105,255,.2),inset 0 0 8px rgba(0,0,0,.5);}
+  .cd-mat{display:flex;align-items:center;gap:4px;flex:none;}
+  .cd-tile{width:28px;height:28px;border:1px solid #6b521a;border-radius:5px;
+    background:radial-gradient(circle at 50% 40%,rgba(228,174,57,.2),rgba(0,0,0,.5) 70%);
+    color:#e6c88a;font:900 15px "KaiTi",serif;display:inline-flex;align-items:center;justify-content:center;
+    text-shadow:0 1px 2px #000;}
+  .cd-plus{color:#8a7d63;font:900 12px "Oswald",sans-serif;}
+  .cd-arrow{color:#ffd700;font:900 15px "Oswald",sans-serif;flex:none;
+    text-shadow:0 0 8px rgba(255,215,0,.7),0 1px 2px #000;}
+  .cd-res{display:flex;align-items:center;gap:8px;flex:1;min-width:0;}
+  .cd-res img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 1px 2px #000);
+    background:radial-gradient(circle,#2a2620,#120e08);border:1px solid #4a463d;border-radius:6px;padding:3px;flex:none;}
+  .cd-info{min-width:0;display:flex;flex-direction:column;gap:1px;}
+  .cd-wn{color:#cdbf9e;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .cd-wn b{color:#ffd700;font-weight:900;text-shadow:0 0 6px rgba(255,215,0,.4);}
+  .cd-skill{flex-basis:100%;font-size:9.5px;color:#b6a986;line-height:1.3;letter-spacing:.3px;padding-left:1px;}
+  .cd-skill i{color:#c8862e;font-style:normal;font-weight:800;margin-right:3px;}
+  /* 排行榜弹窗 */
+  #rankModal .lb-table{display:flex;flex-direction:column;gap:5px;padding:2px 0;}
+  #rankModal .lb-thead{display:grid;grid-template-columns:48px 1fr 84px;gap:4px;
+    padding:5px 8px;font:800 9px "Oswald","Microsoft YaHei";color:#8a7d63;letter-spacing:1px;
+    background:rgba(0,0,0,.35);border:1px solid #3a3225;border-radius:5px;}
+  .lb-row{display:grid;grid-template-columns:48px 1fr 84px;gap:4px;align-items:center;
+    padding:6px 8px;font-size:10.5px;color:#cdbf9e;background:rgba(26,22,16,.6);border:1px solid #3a3225;
+    border-radius:5px;box-shadow:inset 0 0 6px rgba(0,0,0,.35);}
+  .lb-row .r{font:900 12px "Oswald",sans-serif;color:#e4ae39;}
+  .lb-row .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#e6ddc8;font-weight:700;}
+  .lb-row .wv{font:700 10px "Oswald",sans-serif;color:#a99c80;}
+  .lb-row.g1{background:linear-gradient(180deg,rgba(228,174,57,.28),rgba(80,60,15,.28));border-color:#e4ae39;}
+  .lb-row.g2{background:linear-gradient(180deg,rgba(200,206,214,.25),rgba(70,75,85,.25));border-color:#9aa3ad;}
+  .lb-row.g3{background:linear-gradient(180deg,rgba(150,95,50,.25),rgba(60,35,15,.25));border-color:#a0653a;}
+  .lb-row.me{border-color:#ffd700;box-shadow:0 0 8px rgba(255,215,0,.35),inset 0 0 6px rgba(0,0,0,.35);}
+  .lb-row .crown{margin-right:3px;}
   /* 结算页：天赋点高亮奖励通栏 */
   #over .rpt-talent-banner{display:flex;align-items:center;justify-content:space-between;gap:10px;
     margin:9px 0 11px;padding:11px 14px;border-radius:8px;position:relative;overflow:hidden;
@@ -545,6 +605,46 @@
       </div>
       <div class="tb-caption">天赋</div>
     </button>
+    <div class="home-left-btns">
+      <button id="playBtn" class="hl-btn" aria-label="玩法介绍">
+        <div class="tb-badge-ic">
+          <div class="tb-shield">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2 L28 7 V16 C28 24 22 29 16 31 C10 29 4 24 4 16 V7 Z" fill="#2a2118" stroke="#e4ae39" stroke-width="1.5"/>
+              <rect x="9" y="8" width="14" height="17" rx="2" fill="#1a140c" stroke="#b8781e" stroke-width="1"/>
+              <path d="M12 12 L20 12 M12 15 L17 15 M12 18 L18 18" stroke="#e4ae39" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+              <circle cx="21" cy="21" r="2.6" fill="none" stroke="#ffd700" stroke-width="1.2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="tb-caption">玩法</div>
+      </button>
+      <button id="codexBtn" class="hl-btn" aria-label="武器图鉴">
+        <div class="tb-badge-ic">
+          <div class="tb-shield">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2 L28 7 V16 C28 24 22 29 16 31 C10 29 4 24 4 16 V7 Z" fill="#2a2118" stroke="#e4ae39" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="6" fill="none" stroke="#e4ae39" stroke-width="1.6"/>
+              <circle cx="16" cy="16" r="1.6" fill="#ffd700"/>
+              <path d="M16 7 V11 M16 21 V25 M7 16 H11 M21 16 H25" stroke="#e4ae39" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="tb-caption">图鉴</div>
+      </button>
+      <button id="rankBtn" class="hl-btn" aria-label="排行榜">
+        <div class="tb-badge-ic">
+          <div class="tb-shield">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2 L28 7 V16 C28 24 22 29 16 31 C10 29 4 24 4 16 V7 Z" fill="#2a2118" stroke="#e4ae39" stroke-width="1.5"/>
+              <path d="M11 9 H21 V16 C21 19.5 18.5 22 16 22 C13.5 22 11 19.5 11 16 Z" fill="#1a140c" stroke="#ffd700" stroke-width="1.3"/>
+              <path d="M9.5 9 H11 M21 9 H22.5 M12 25 H20" stroke="#e4ae39" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="tb-caption">排行榜</div>
+      </button>
+    </div>
   </div>
 </div>
 <div id="app">
@@ -582,44 +682,6 @@
   </div>
 </div>
 <div id="tooltip"></div>
-<aside id="armory" aria-hidden="true">
-  <div class="arm-hd">合成列表<span>ARMORY</span></div>
-  <ul class="arm-list">
-    <li><img src="image/巨龙.png" alt=""><span class="cw">巨+龙</span><span class="ar">→</span><span class="wn"><b>AWP</b> | 巨龙传说</span><span class="skill"><i>特效</i>千里爆头</span></li>
-    <li><img src="image/龙王.png" alt=""><span class="cw">龙+王</span><span class="ar">→</span><span class="wn"><b>M4A4</b> | 龙王</span><span class="skill"><i>特效</i>流血易伤</span></li>
-    <li><img src="image/王蛇.png" alt=""><span class="cw">王+蛇</span><span class="ar">→</span><span class="wn"><b>★驾驶手套</b> | 王蛇</span><span class="skill"><i>特效</i>瘫痪减速</span></li>
-    <li><img src="image/火蛇.png" alt=""><span class="cw">火+蛇</span><span class="ar">→</span><span class="wn"><b>AK-47</b> | 火蛇</span><span class="skill"><i>特效</i>点燃单个敌人</span></li>
-    <li><img src="image/野火.png" alt=""><span class="cw">野+火</span><span class="ar">→</span><span class="wn"><b>AWP</b> | 野火</span><span class="skill"><i>特效</i>范围爆炸</span></li>
-    <li><img src="image/火神.png" alt=""><span class="cw">火+神</span><span class="ar">→</span><span class="wn"><b>AK-47</b> | 火神</span><span class="skill"><i>特效</i>全屏点燃</span></li>
-    <li><img src="image/爱神.png" alt=""><span class="cw">爱+神</span><span class="ar">→</span><span class="wn"><b>AK-47</b> | 爱神</span><span class="skill"><i>特效</i>魅惑敌人</span></li>
-    <li><img src="image/野荷.png" alt=""><span class="cw">野+荷</span><span class="ar">→</span><span class="wn"><b>AK-47</b> | 野荷</span><span class="skill"><i>特效</i>群体缠绕</span></li>
-  </ul>
-</aside>
-<aside id="guide" aria-hidden="true">
-  <div class="g-hd">游戏引导<span>GUIDE</span></div>
-  <div class="g-list">
-    <div class="g-card">
-      <div class="g-top"><span class="g-no">01</span><span class="g-title">刀 + 刀 = 刀 Lv2</span></div>
-      <div class="g-demo"><span class="mt">刀</span><span class="mop">+</span><span class="mt">刀</span><span class="mop">→</span><span class="mt">刀<span class="lvb">L2</span></span></div>
-      <div class="g-desc">用两个相同文字合成为更高级文字。</div>
-    </div>
-    <div class="g-card">
-      <div class="g-top"><span class="g-no">02</span><span class="g-title">巨 + 龙 = 巨龙传说</span></div>
-      <div class="g-demo"><span class="mt raw">巨</span><span class="mop">+</span><span class="mt raw">龙</span><span class="mop">→</span><span class="mbadge">AWP·巨龙传说</span></div>
-      <div class="g-desc">特定文字组合可合成为高级武器（横向或纵向相邻均可）。</div>
-    </div>
-    <div class="g-card">
-      <div class="g-top"><span class="g-no">03</span><span class="g-title">高级武器击杀升级</span></div>
-      <div class="g-demo"><span class="mbadge">巨龙</span><span class="mop">×</span><span class="men">匪</span><span class="mop">↑</span><span class="mlv">Lv1→Lv2</span></div>
-      <div class="g-desc">高级武器通过击杀敌人获得成长并升级。</div>
-    </div>
-    <div class="g-card">
-      <div class="g-top"><span class="g-no">04</span><span class="g-title">铲子可砸开箱子</span></div>
-      <div class="g-demo"><span class="mt">⛏</span><span class="mop">→</span><span class="mt crate">箱</span><span class="mop">💥</span><span class="mlv" style="color:#e0a24a">碎裂</span></div>
-      <div class="g-desc">铲子可以破坏地图上的木箱或障碍物。</div>
-    </div>
-  </div>
-</aside>
 <div id="over">
   <div class="rpt">
     <div class="rpt-hd">
@@ -679,6 +741,114 @@
     </div>
   </div>
 </div>
+<div id="playModal" class="gm-modal">
+  <div class="gm-panel">
+    <div class="gm-hd">
+      <span class="gm-title">玩法介绍</span>
+      <button class="gm-close" data-close="playModal" aria-label="关闭">✕</button>
+    </div>
+    <div class="gm-body">
+      <div class="g-list">
+        <div class="g-card">
+          <div class="g-top"><span class="g-no">01</span><span class="g-title">刀 + 刀 = 刀 Lv2</span></div>
+          <div class="g-demo"><span class="mt">刀</span><span class="mop">+</span><span class="mt">刀</span><span class="mop">→</span><span class="mt">刀<span class="lvb">L2</span></span></div>
+          <div class="g-desc">用两个相同文字合成为更高级文字。</div>
+        </div>
+        <div class="g-card">
+          <div class="g-top"><span class="g-no">02</span><span class="g-title">巨 + 龙 = 巨龙传说</span></div>
+          <div class="g-demo"><span class="mt raw">巨</span><span class="mop">+</span><span class="mt raw">龙</span><span class="mop">→</span><span class="mbadge">AWP·巨龙传说</span></div>
+          <div class="g-desc">特定文字组合可合成为高级武器（横向或纵向相邻均可）。</div>
+        </div>
+        <div class="g-card">
+          <div class="g-top"><span class="g-no">03</span><span class="g-title">高级武器击杀升级</span></div>
+          <div class="g-demo"><span class="mbadge">巨龙</span><span class="mop">×</span><span class="men">匪</span><span class="mop">↑</span><span class="mlv">Lv1→Lv2</span></div>
+          <div class="g-desc">高级武器通过击杀敌人获得成长并升级。</div>
+        </div>
+        <div class="g-card">
+          <div class="g-top"><span class="g-no">04</span><span class="g-title">铲子可砸开箱子</span></div>
+          <div class="g-demo"><span class="mt">⛏</span><span class="mop">→</span><span class="mt crate">箱</span><span class="mop">💥</span><span class="mlv" style="color:#e0a24a">碎裂</span></div>
+          <div class="g-desc">铲子可以破坏地图上的木箱或障碍物。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="codexModal" class="gm-modal">
+  <div class="gm-panel">
+    <div class="gm-hd">
+      <span class="gm-title">武器合成图鉴</span>
+      <button class="gm-close" data-close="codexModal" aria-label="关闭">✕</button>
+    </div>
+    <div class="gm-body">
+      <div class="codex-grid">
+        <div class="cd-card" data-tier="GOLD">
+          <div class="cd-mat"><span class="cd-tile">巨</span><span class="cd-plus">+</span><span class="cd-tile">龙</span></div>
+          <div class="cd-arrow">➔</div>
+          <div class="cd-res"><img src="image/巨龙.png" alt=""><div class="cd-info"><div class="cd-wn"><b>AWP</b> | 巨龙传说</div></div></div>
+          <div class="cd-skill"><i>特效</i>千里爆头</div>
+        </div>
+        <div class="cd-card" data-tier="RED">
+          <div class="cd-mat"><span class="cd-tile">龙</span><span class="cd-plus">+</span><span class="cd-tile">王</span></div>
+          <div class="cd-arrow">➔</div>
+          <div class="cd-res"><img src="image/龙王.png" alt=""><div class="cd-info"><div class="cd-wn"><b>M4A4</b> | 龙王</div></div></div>
+          <div class="cd-skill"><i>特效</i>流血易伤</div>
+        </div>
+        <div class="cd-card" data-tier="RED">
+          <div class="cd-mat"><span class="cd-tile">王</span><span class="cd-plus">+</span><span class="cd-tile">蛇</span></div>
+          <div class="cd-arrow">➔</div>
+          <div class="cd-res"><img src="image/王蛇.png" alt=""><div class="cd-info"><div class="cd-wn"><b>★驾驶手套</b> | 王蛇</div></div></div>
+          <div class="cd-skill"><i>特效</i>瘫痪减速</div>
+        </div>
+        <div class="cd-card" data-tier="PINK">
+          <div class="cd-mat"><span class="cd-tile">火</span><span class="cd-plus">+</span><span class="cd-tile">蛇</span></div>
+          <div class="cd-arrow">➔</div>
+          <div class="cd-res"><img src="image/火蛇.png" alt=""><div class="cd-info"><div class="cd-wn"><b>AK-47</b> | 火蛇</div></div></div>
+          <div class="cd-skill"><i>特效</i>点燃单个敌人</div>
+        </div>
+        <div class="cd-card" data-tier="PINK">
+          <div class="cd-mat"><span class="cd-tile">野</span><span class="cd-plus">+</span><span class="cd-tile">火</span></div>
+          <div class="cd-arrow">➔</div>
+          <div class="cd-res"><img src="image/野火.png" alt=""><div class="cd-info"><div class="cd-wn"><b>AWP</b> | 野火</div></div></div>
+          <div class="cd-skill"><i>特效</i>范围爆炸</div>
+        </div>
+        <div class="cd-card" data-tier="RED">
+          <div class="cd-mat"><span class="cd-tile">火</span><span class="cd-plus">+</span><span class="cd-tile">神</span></div>
+          <div class="cd-arrow">➔</div>
+          <div class="cd-res"><img src="image/火神.png" alt=""><div class="cd-info"><div class="cd-wn"><b>AK-47</b> | 火神</div></div></div>
+          <div class="cd-skill"><i>特效</i>全屏点燃</div>
+        </div>
+        <div class="cd-card" data-tier="PINK">
+          <div class="cd-mat"><span class="cd-tile">爱</span><span class="cd-plus">+</span><span class="cd-tile">神</span></div>
+          <div class="cd-arrow">➔</div>
+          <div class="cd-res"><img src="image/爱神.png" alt=""><div class="cd-info"><div class="cd-wn"><b>AK-47</b> | 爱神</div></div></div>
+          <div class="cd-skill"><i>特效</i>魅惑敌人</div>
+        </div>
+        <div class="cd-card" data-tier="RED">
+          <div class="cd-mat"><span class="cd-tile">野</span><span class="cd-plus">+</span><span class="cd-tile">荷</span></div>
+          <div class="cd-arrow">➔</div>
+          <div class="cd-res"><img src="image/野荷.png" alt=""><div class="cd-info"><div class="cd-wn"><b>AK-47</b> | 野荷</div></div></div>
+          <div class="cd-skill"><i>特效</i>群体缠绕</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="rankModal" class="gm-modal">
+  <div class="gm-panel">
+    <div class="gm-hd">
+      <span class="gm-title">🏆 最强排行榜</span>
+      <button class="gm-close" data-close="rankModal" aria-label="关闭">✕</button>
+    </div>
+    <div class="gm-body">
+      <div class="lb-table">
+        <div class="lb-thead">
+          <span>排名</span><span>玩家/记录</span><span>坚守波次</span>
+        </div>
+        <div id="rankList"></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="talentOverlay">
   <div id="talentPanel">
     <div class="tp-hd">
@@ -708,7 +878,7 @@
         <div class="bi-name" id="biName"></div>
       </div>
       <div class="bi-right">
-        <div class="bi-top"><span class="bi-warn">⚠ WARNING</span><span class="bi-title" id="biTitle"></span></div>
+        <div class="bi-top"><span class="bi-title" id="biTitle"></span></div>
         <div class="bi-story" id="biStory"></div>
         <div class="bi-skill-label">特色技能</div>
         <div class="bi-skill" id="biSkill"></div>
@@ -793,6 +963,7 @@ let hasPanShield=false; // 背锅：本波黑锅护盾
 let dmgBuffMul=1, atkSpdMul=1, atkRangeMul=1;
 let permanentSpdMul=1; // 发枪永久加速
 let pendingAllinDmg=0; // 梭哈待结算伤害
+let freeBoxNext=0; // 夏促：下次开箱免费
 let pendingRush=false; // 拼了待生效
 let pendingEco=false; // ECO局待生效
 best=+(localStorage.getItem('cs2td_best')||0);
@@ -805,7 +976,7 @@ function reset(){
   spawnLeft=0;spawnT=0;enemyHP=16;running=true;drag=null;curWeapons=[];bossPending=false;shake=0;boxesSinceCombo=0;shovelCount=0;waveBuff=null;empBlasts=[];
   gameStartTime=0;
   planeFx=null;lockedWeapons={};jammedWeapons={};
-  tempWaveHpMul=1;tempKillGoldMul=1;discountCasesRemaining=0;headshotBuffWaves=0;hawkeyeBuffWaves=0;adrenalineBuffWaves=0;highRiskBuffWaves=0;hasPanShield=false;dmgBuffMul=1;atkSpdMul=1;atkRangeMul=1;permanentSpdMul=1;pendingAllinDmg=0;pendingRush=false;pendingEco=false;
+  tempWaveHpMul=1;tempKillGoldMul=1;discountCasesRemaining=0;headshotBuffWaves=0;hawkeyeBuffWaves=0;adrenalineBuffWaves=0;highRiskBuffWaves=0;hasPanShield=false;dmgBuffMul=1;atkSpdMul=1;atkRangeMul=1;permanentSpdMul=1;pendingAllinDmg=0;pendingRush=false;pendingEco=false;freeBoxNext=0;
   stats={kills:0,damage:0,streak:0,maxStreak:0,combos:0};
   document.getElementById('over').classList.remove('show');
   document.getElementById('startBtn').classList.remove('hide');
@@ -819,7 +990,7 @@ function reset(){
 function tip(s){document.getElementById('tip').innerHTML=s;}
 function showWaveBuff(){const el=document.getElementById('waveBuff');if(el&&waveBuff){el.textContent='第'+wave+'波加强：'+waveBuff.name;el.style.display='block';}}
 function hideWaveBuff(){const el=document.getElementById('waveBuff');if(el)el.style.display='none';}
-function updateHud(){hWave.textContent=wave;hGold.textContent=gold;hLives.textContent='❤'.repeat(Math.max(0,lives))||'—';hBest.textContent=best;let cost=Math.round((12+3*boxCount)*(1-0.02*(talentLevels.discount||0)));if(discountCasesRemaining>0)cost=Math.floor(cost/2);boxBtn.textContent='武器箱 💰'+cost;boxBtn.disabled=gold<cost;}
+function updateHud(){hWave.textContent=wave;hGold.textContent=gold;hLives.textContent='❤'.repeat(Math.max(0,lives))||'—';hBest.textContent=best;let cost=12+3*boxCount;if(discountCasesRemaining>0)cost=Math.floor(cost/2);if(freeBoxNext>0)cost=0;boxBtn.textContent='武器箱 💰'+cost;boxBtn.disabled=gold<cost;}
 
 /* ============ 开箱 / 候选区 ============ */
 /* ---- 抽卡子池 ---- */
@@ -863,7 +1034,8 @@ function rollOne(){
 function capPush(keys,roller){let k,t=0;do{k=roller();t++;}while(keys.filter(x=>x===k).length>=2&&t<30);keys.push(k);} // 同字≤2
 document.getElementById('boxBtn').onclick=()=>{
   if(window.TUT&&TUT.active&&TUT.stepId()!=='box')return;   // 引导中仅“打开武器箱”步骤可开箱
-  const cost=Math.round((12+3*boxCount)*(1-0.02*(talentLevels.discount||0)));let actualCost=cost;if(discountCasesRemaining>0){actualCost=Math.floor(cost/2);discountCasesRemaining--;}
+  const cost=12+3*boxCount;let actualCost=cost;if(discountCasesRemaining>0){actualCost=Math.floor(cost/2);discountCasesRemaining--;}
+  let wasFree=false;if(freeBoxNext>0){actualCost=0;freeBoxNext=0;wasFree=true;}
   if(gold<actualCost)return;gold-=actualCost;
   const n=boxCount;boxCount++;
   const keys=[];
@@ -879,7 +1051,7 @@ document.getElementById('boxBtn').onclick=()=>{
   boxesSinceCombo=keys.some(k=>RAW.includes(k))?0:boxesSinceCombo+1;
   shovelCount+=keys.filter(k=>k==='shovel').length;
   tray=keys.map(k=>({key:k,lvl:1,used:false}));
-  sel=-1;renderTray();updateHud();tip('已开箱！点碎片放置，或点两个同名武器字合成升级');
+  sel=-1;renderTray();updateHud();tip(wasFree?'夏促！本次开箱免费':'已开箱！点碎片放置，或点两个同名武器字合成升级');
   if(window.TUT)TUT.notify('box');
 };
 function pieceLabel(k){if(k==='shovel')return['⛏','铲子·开格'];if(ATK[k]){const w=W[ATK[k]];return[k,w.n];}return[k,'碎片·睡眠'];}
@@ -1011,7 +1183,6 @@ function rollWaveBuff(){if(wave<15)return null;return WAVE_BUFFS[Math.floor(Math
 /* ============ 战斗 ============ */
 // 平滑难度曲线：血量=基础+线性+缓二次；数量温和递增
 function startWave(){wave++;if(gameStartTime===0)gameStartTime=Date.now();tickBuffWaves();enemyHP=Math.round((20+(wave-1)*10+Math.pow(wave-1,2)*2.5)*tempWaveHpMul);spawnLeft=Math.min(40,6+Math.floor(wave*1.2));spawnT=0;started=true;bossPending=(wave%4===0);waveBuff=rollWaveBuff();if(waveBuff)showWaveBuff();else hideWaveBuff();document.getElementById('startBtn').classList.add('hide');updateHud();
-  if(pendingAllinDmg>0){tip('梭哈伤害 '+pendingAllinDmg+' 已施加到本波敌人！');pendingAllinDmg=0;}
   // 波次开始音效（Howler.js）
   sfxManager.stopAll();
   if(wave%10===0)        sfxManager.okLetsGo.play();
@@ -1019,7 +1190,7 @@ function startWave(){wave++;if(gameStartTime===0)gameStartTime=Date.now();tickBu
   else                    sfxManager.gogogo.play();
   if(window.TUT)TUT.notify('start');}
 document.getElementById('startBtn').onclick=()=>{audio();if(typeof Howler!=='undefined'&&Howler.ctx&&Howler.ctx.state==='suspended')Howler.ctx.resume();if(window.TUT&&TUT.active&&TUT.stepId()!=='start')return;if(buffPending)return;if(!started)startWave();};
-function spawnEnemy(){const spd=(wave>=5?53*1.2:53)*permanentSpdMul;const isElite=wave>=20&&Math.random()<0.15;const e={t:0,hp:enemyHP,max:enemyHP,spd,burn:0,bpct:0,bflat:0,rev:0,stun:0,bleed:0,bleedDps:0,breach:0,cripple:0,x:PATH[0][0],y:PATH[0][1]};if(isElite){e.elite=true;e.hp=enemyHP*3;e.max=e.hp;e.spd=spd*0.7;}if(waveBuff)waveBuff.apply(e);if(pendingAllinDmg>0){e.hp-=pendingAllinDmg;if(e.hp<=0)e.hp=1;e.max=Math.max(e.max,e.hp);}enemies.push(e);}
+function spawnEnemy(){const spd=(wave>=5?53*1.2:53)*permanentSpdMul;const isElite=wave>=20&&Math.random()<0.15;const e={t:0,hp:enemyHP,max:enemyHP,spd,burn:0,bpct:0,bflat:0,rev:0,stun:0,bleed:0,bleedDps:0,breach:0,cripple:0,x:PATH[0][0],y:PATH[0][1]};if(isElite){e.elite=true;e.hp=enemyHP*3;e.max=e.hp;e.spd=spd*0.7;}  if(waveBuff)waveBuff.apply(e);if(pendingAllinDmg>0){e.hp-=pendingAllinDmg;if(e.hp<=0){kill(e,null);return;}e.max=Math.max(e.max,e.hp);}enemies.push(e);}
 const BOSSES=['鸡王','陀螺挂','全图挂','锁头挂','回溯挂','穿墙挂','本拉登'];
 const BOSS_HP_BASE=[300,800,1500,2600];
 function bossHP(bi){
@@ -1055,6 +1226,7 @@ function spawnBoss(){
     e._wallPhase=0; // 0=第一段(0,0)->(0,4), 1=第二段(0,4)->终点
   }
   if(waveBuff)waveBuff.apply(e);
+  if(pendingAllinDmg>0){e.hp-=pendingAllinDmg;if(e.hp<=0){kill(e,null);return;}e.max=Math.max(e.max,e.hp);}
   enemies.push(e);
   tip('⚠ BOSS 来袭：'+name+'！');
   addShake(4);
@@ -1266,10 +1438,10 @@ function applyBuff(id){
   else if(id==='scapegoat_pan'){hasPanShield=true;tip('背锅！黑锅已架设，本波人质伤害全部抵挡');renderPanOnMap();}
   else if(id==='eco'){tempWaveHpMul=2.0;tempKillGoldMul=2.0;pendingEco=true;}
   else if(id==='sellblood'){lives=Math.max(1,lives-1);discountCasesRemaining=3;if(lives<=1)tip('⚠ 生命危险！仅剩1点');}
-  else if(id==='sale'){const cost=Math.round((12+3*boxCount)*(1-0.02*(talentLevels.discount||0)));const keys=[];const n=boxCount;keys.push('shovel');capPush(keys,rollBase);capPush(keys,rollBase);capPush(keys,rollBase);capPush(keys,rollCombo);tray=keys.map(k=>({key:k,lvl:1,used:false}));sel=-1;renderTray();const deduct=Math.min(gold,rint(1,100));gold-=deduct;tip('夏促！免费开箱，扣除 '+deduct+' 金币');updateHud();}
+  else if(id==='sale'){freeBoxNext=1;const deduct=Math.min(gold,rint(1,100));gold-=deduct;tip('夏促！下次开箱免费，扣除 '+deduct+' 金币');updateHud();}
   else if(id==='replace'){const occs=[];for(let i=0;i<grid.length;i++){if(grid[i].occ)occs.push(i);}if(occs.length<=2){tip('场上字不足，无法汰换');}else{shuffleArr(occs);const rm=occs.slice(0,2);rm.forEach(gi=>{grid[gi].occ=null;});let maxLv=0;const cands=[];for(let i=0;i<grid.length;i++){if(grid[i].occ){const lv=grid[i].occ.lvl||1;if(lv>maxLv){maxLv=lv;cands.length=0;cands.push(i);}else if(lv===maxLv)cands.push(i);}}if(cands.length){const t=cands[rint(0,cands.length-1)];grid[t].occ.lvl=(grid[t].occ.lvl||1)+1;fxRing(...cellCenter(t),CELL*0.8,'#d4a830');tip('汰换完成！最高级武器 Lv.'+grid[t].occ.lvl);}rebuild();renderTray();updateHud();}}
   else if(id==='rush'){dmgBuffMul=1.4;tempKillGoldMul=0;pendingRush=true;}
-  else if(id==='allin'){const spend=gold;gold=0;const dmgAll=spend*10;if(enemies.length>0){enemies.forEach(e=>{if(e.hp>0){hit(e,dmgAll,null);}});tip('梭哈！消耗 '+spend+' 金币，造成 '+dmgAll+' 伤害');}else{pendingAllinDmg=dmgAll;tip('梭哈！消耗 '+spend+' 金币，下一波敌人将受到 '+dmgAll+' 伤害');}updateHud();}
+  else if(id==='allin'){const spend=gold;gold=0;pendingAllinDmg=spend*10;tip('梭哈！消耗 '+spend+' 金币，接下来出场的敌人将直接扣除 '+pendingAllinDmg+' 血量');updateHud();}
   else if(id==='headshot'){headshotBuffWaves=5;}
   else if(id==='hawkeye'){hawkeyeBuffWaves=5;}
   else if(id==='adrenaline'){adrenalineBuffWaves=5;}
@@ -1297,6 +1469,7 @@ function tickBuffWaves(){
 
 /* ============ Howler.js 音效管理 ============ */
 const sfxManager = {
+  startup:      new Howl({ src: ['./music/gamestartup.mp3'],      loop: true,  volume: 0.7 }),
   gogogo:       new Howl({ src: ['./music/gogogo.mp3'],          loop: false, volume: 0.8 }),
   terroristWin: new Howl({ src: ['./music/terrorists-wins.mp3'], loop: false, volume: 0.8 }),
   okLetsGo:     new Howl({ src: ['./music/okletsgo.mp3'],        loop: false, volume: 0.8 }),
@@ -1304,6 +1477,13 @@ const sfxManager = {
   // 停止所有音效
   stopAll(){ Howler.stop(); }
 };
+/* 主界面 BGM：首次用户交互后解锁播放 */
+function playStartupBgm(){
+  try{if(sfxManager.startup&&!sfxManager.startup.playing())sfxManager.startup.play();}catch(e){}
+}
+function stopStartupBgm(){
+  try{if(sfxManager.startup&&sfxManager.startup.playing())sfxManager.startup.stop();}catch(e){}
+}
 
 /* ============ 音效（WebAudio 极简合成）============ */
 let AC=null,shake=0;
@@ -1324,7 +1504,7 @@ let last=performance.now(), speed=1, paused=false, gameStartTime=0;
 function loop(now){let dt=(now-last)/1000;last=now;if(dt>0.05)dt=0.05;if(running&&!paused)update(dt*speed);draw();requestAnimationFrame(loop);}
 function update(dt){
   if(dpsPanelOpen){dpsAccum+=dt;if(dpsAccum>=0.5){dpsAccum=0;renderDpsPanel();}}
-  if(started){if(bossPending){spawnBoss();bossPending=false;}if(spawnLeft>0){spawnT-=dt;if(spawnT<=0){spawnEnemy();spawnLeft--;spawnT=0.82;}}else if(enemies.length===0){const need=Math.round((12+3*boxCount)*(1-0.02*(talentLevels.discount||0)));started=false;
+  if(started){if(bossPending){spawnBoss();bossPending=false;}if(spawnLeft>0){spawnT-=dt;if(spawnT<=0){spawnEnemy();spawnLeft--;spawnT=0.82;if(spawnLeft<=0&&pendingAllinDmg>0)pendingAllinDmg=0;}}else if(enemies.length===0){const need=12+3*boxCount;started=false;
     if(running&&wave%5===0&&wave>0){showBuffPanel();tip('第 '+wave+' 波清除！选择战术BUFF后继续');}
     else{setTimeout(()=>{if(running&&!buffPending)startWave();},1200);tip('第 '+wave+' 波清除！全歼即可攒够开箱 💰'+need+'（漏怪会少赚），下一波来袭…');}
     // 背锅：本波结束，移除黑锅护盾
@@ -1440,9 +1620,9 @@ let lbCache=[];
 try{lbCache=JSON.parse(localStorage.getItem('buffgo_lb')||'[]');}catch(e){lbCache=[];}
 function cacheLB(a){lbCache=a||[];try{localStorage.setItem('buffgo_lb',JSON.stringify(lbCache));}catch(e){}}
 function fetchLB(cb){fetch('/api/lb').then(r=>r.json()).then(d=>{if(Array.isArray(d))cacheLB(d);if(cb)cb();}).catch(()=>{if(cb)cb();});}
-function upsertLB(name,wv){fetch('/api/lb',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,wave:wv})})
-    .then(r=>r.json()).then(d=>{if(Array.isArray(d))cacheLB(d);renderLB();})
-    .catch(()=>{const e=lbCache.find(x=>x.name===name);if(e){if(wv>e.wave)e.wave=wv;}else lbCache.push({name,wave:wv});lbCache.sort((x,y)=>y.wave-x.wave);cacheLB(lbCache);renderLB();});}
+function upsertLB(name,wv,kills){const rec={name,wave:wv,kills:kills||0,time:Date.now()};fetch('/api/lb',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(rec)})
+    .then(r=>r.json()).then(d=>{if(Array.isArray(d))cacheLB(d);renderLB();if(renderRankModal)renderRankModal();})
+    .catch(()=>{const e=lbCache.find(x=>x.name===name);if(e){if(wv>e.wave){e.wave=wv;e.kills=kills||e.kills||0;e.time=Date.now();}}else lbCache.push(rec);lbCache.sort((x,y)=>y.wave-x.wave);cacheLB(lbCache);renderLB();if(renderRankModal)renderRankModal();});}
 function removeLB(name){fetch('/api/lb',{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})})
     .then(r=>r.json()).then(d=>{if(Array.isArray(d))cacheLB(d);renderLB();})
     .catch(()=>{lbCache=lbCache.filter(x=>x.name!==name);cacheLB(lbCache);renderLB();});}
@@ -1459,6 +1639,31 @@ function renderLB(){const list=G('oLbList');list.innerHTML='';const a=lbCache,ni
   const idx=nick?a.findIndex(x=>x.name===nick):-1;
   if(idx>=0){G('oRank').textContent='#'+(idx+1);G('oRankLine').textContent='· 共 '+a.length+' 位行动者';}
   else{G('oRank').textContent='#—';G('oRankLine').textContent='登记后上榜';}}
+function fmtLbTime(t){
+  if(!t)return '—';
+  const d=new Date(t);
+  const p=n=>String(n).padStart(2,'0');
+  return (d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes());
+}
+function renderRankModal(){
+  const list=G('rankList');if(!list)return;
+  const a=lbCache.slice(0,20),nick=localStorage.getItem('buffgo_nick');
+  if(!a.length){list.innerHTML='<div class="lb-row" style="justify-content:center;text-align:center;color:#6a6253">暂无记录，完成一局后自动上榜</div>';return;}
+  list.innerHTML=a.map((e,i)=>{
+    const rank=i+1;
+    const cls=rank===1?'g1':rank===2?'g2':rank===3?'g3':'';
+    const me=nick&&e.name===nick?' me':'';
+    const rkHtml=rank===1?'<span class="r"><span class="crown">👑</span>🥇</span>'
+      :rank===2?'<span class="r">🥈</span>'
+      :rank===3?'<span class="r">🥉</span>'
+      :'<span class="r">#'+rank+'</span>';
+    return '<div class="lb-row '+cls+me+'">'+
+      rkHtml+
+      '<span class="nm">'+e.name+'</span>'+
+      '<span class="wv">'+e.wave+' 波</span>'+
+      '</div>';
+  }).join('');
+}
 function initNick(){const n=localStorage.getItem('buffgo_nick');
   if(n){G('oNickNew').classList.add('hide');G('oNickShow').classList.remove('hide');G('oNickName').textContent=n;}
   else{const rn=NICK_POOL[rint(0,NICK_POOL.length-1)]+rint(1,99);localStorage.setItem('buffgo_nick',rn);G('oNickNew').classList.add('hide');G('oNickShow').classList.remove('hide');G('oNickName').textContent=rn;}}
@@ -1487,7 +1692,7 @@ function gameOver(){
   if(typeof updateTalentRedot==='function')updateTalentRedot();
   initNick();
   const nick=localStorage.getItem('buffgo_nick');
-  if(nick)upsertLB(nick,wave);            // 自动上榜
+  if(nick)upsertLB(nick,wave,stats.kills);            // 自动上榜
   else fetchLB(renderLB);                  // 异常情况 → 拉取共享榜单展示
   // 上报游戏会话数据
   if(gameStartTime>0){
@@ -1525,6 +1730,7 @@ function confirmBackHome(){
   document.getElementById('over').classList.remove('show');
   document.getElementById('cover').classList.remove('hide');
   if(typeof sfxManager!=='undefined'&&sfxManager.stopAll)sfxManager.stopAll();
+  playStartupBgm();
   if(typeof tip==='function')tip('已返回主界面');
 }
 document.getElementById('backBtn').onclick=showBackConfirm;
@@ -2036,11 +2242,10 @@ const TALENT_LIST=[
   {id:'gold',     name:'初始金币',   icon:'./icon/gold.png',      effect:'每次 +5 初始金币',                          cost:[4,4,4,4,4,4,4,4,4,4], max:10},
   {id:'grid',     name:'初始格子',   icon:'./icon/grid.png',      effect:'每次解锁 1 个初始格子',                      cost:[20,30,40,50], max:4},
   {id:'hp',       name:'人质血量',   icon:'./icon/hp.png',        effect:'每次 +1 人质血量',                          cost:[20,30,40], max:3},
-  {id:'discount', name:'开箱价格',   icon:'./icon/discount.png',  effect:'每次 -2% 开箱价格',                         cost:[10,20,30,40,50], max:5},
   {id:'attack',   name:'攻击力',     icon:'./icon/attack.png',    effect:'每次 +1% 武器攻击力',                       cost:[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4], max:20},
   {id:'range',    name:'射程',       icon:'./icon/range.png',     effect:'每次 +1% 武器射程',                         cost:[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4], max:20},
   {id:'speed',    name:'攻速',       icon:'./icon/sepeed.png',    effect:'每次 +1% 武器攻速',                         cost:[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4], max:20},
-  {id:'candidate',name:'备选武器栏', icon:'./icon/candidate.png', effect:'增加 1 个候选区格子',                       cost:[80], max:1},
+  {id:'candidate',name:'备选栏',   icon:'./icon/candidate.png', effect:'增加 1 个候选区格子',                       cost:[80], max:1},
   {id:'kill_gold',name:'杀敌金币',   icon:'./icon/kill_gold.png', effect:'杀敌额外掉落 1 金钱（不受战术 buff 影响）',  cost:[80], max:1},
   {id:'revive',   name:'复活',       icon:'./icon/revive.png',    effect:'增加 1 次复活次数',                         cost:[80], max:1},
 ];
@@ -2132,7 +2337,7 @@ function renderTalentModal(){
     const cell=document.createElement('div');
     cell.className='tc'+(maxed?' maxed':'')+(canBuy?' can-up':'');
     cell.innerHTML=
-      '<div class="tc-icon-wrap"><img class="tc-img" src="'+t.icon+'" alt=""></div>'+
+      '<img class="tc-img" src="'+t.icon+'" alt="">'+
       '<div class="tc-body">'+
         '<div class="tc-row1"><span class="tc-name">'+t.name+'</span><span class="tc-lv">'+(maxed?'MAX':('Lv.'+lvl))+'</span></div>'+
         '<div class="tc-dots">'+dotsHtml+'</div>'+
@@ -2193,8 +2398,32 @@ document.getElementById('talentOverlay').onclick=(ev)=>{
 updateTalentRedot();
 
 /* ============ 启动 ============ */
+document.addEventListener('pointerdown',function unlockStartup(){
+  audio();
+  if(typeof Howler!=='undefined'&&Howler.ctx&&Howler.ctx.state==='suspended')Howler.ctx.resume();
+  playStartupBgm();
+  document.removeEventListener('pointerdown',unlockStartup);
+});
 document.getElementById('talentBtn').onclick=()=>{audio();openTalentModal();};
-document.getElementById('goBtn').onclick=()=>{audio();if(typeof Howler!=='undefined'&&Howler.ctx&&Howler.ctx.state==='suspended')Howler.ctx.resume();reset();document.getElementById('cover').classList.add('hide');TUT.maybeStart();};
+/* 玩法 / 图鉴 弹窗 */
+function openGmModal(id){
+  const el=document.getElementById(id);
+  if(el)el.classList.add('show');
+}
+function closeGmModal(id){
+  const el=document.getElementById(id);
+  if(el)el.classList.remove('show');
+}
+document.getElementById('playBtn').onclick=()=>{audio();openGmModal('playModal');};
+document.getElementById('codexBtn').onclick=()=>{audio();openGmModal('codexModal');};
+document.getElementById('rankBtn').onclick=()=>{audio();fetchLB(renderRankModal);openGmModal('rankModal');};
+document.querySelectorAll('.gm-close').forEach(btn=>{
+  btn.onclick=()=>closeGmModal(btn.getAttribute('data-close'));
+});
+document.querySelectorAll('.gm-modal').forEach(m=>{
+  m.addEventListener('click',ev=>{if(ev.target===m)closeGmModal(m.id);});
+});
+document.getElementById('goBtn').onclick=()=>{audio();if(typeof Howler!=='undefined'&&Howler.ctx&&Howler.ctx.state==='suspended')Howler.ctx.resume();stopStartupBgm();reset();document.getElementById('cover').classList.add('hide');TUT.maybeStart();};
 reset();
 initBuffUI();
 requestAnimationFrame(loop);
