@@ -230,6 +230,75 @@
   #gtitle .en b{color:#e0792e;-webkit-text-fill-color:#e0792e;filter:drop-shadow(0 1px 0 #000);}
   #gtitle .cn{display:inline-block;vertical-align:middle;margin-left:8px;font-family:"Oswald","Microsoft YaHei",sans-serif;font-weight:800;font-size:19px;letter-spacing:1px;
     color:#cdbf9e;text-shadow:0 1px 2px #000,0 0 8px rgba(217,138,58,.15);}
+  #backBtn{position:absolute;left:10px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:5px;padding:0;flex:none;
+    background:linear-gradient(180deg,#a65a2a,#7a3f1c);border:1px solid #c47a3a;
+    box-shadow:0 3px 0 #4a2610,inset 0 1px 0 rgba(255,255,255,.12);color:#ffeede;
+    font:900 17px "Oswald",sans-serif;line-height:1;cursor:pointer;letter-spacing:0;
+    display:flex;align-items:center;justify-content:center;overflow:hidden;transition:.12s;}
+  #backBtn:hover{filter:brightness(1.1);}
+  #backBtn:active{transform:translateY(-50%) translateY(2px);box-shadow:0 1px 0 #4a2610;}
+  #backBtn svg{width:16px;height:16px;display:block;}
+  /* 返回确认弹窗 */
+  #backConfirm{position:fixed;inset:0;z-index:900;display:none;align-items:center;justify-content:center;
+    background:rgba(8,6,3,.8);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+  #backConfirm.show{display:flex;}
+  #backConfirm .bc-panel{width:88%;max-width:340px;
+    background:
+      repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 44px),
+      linear-gradient(180deg,rgba(40,32,20,.98),rgba(18,14,8,.98));
+    border:2px solid #5c4a24;border-radius:10px;padding:16px 16px 14px;position:relative;
+    box-shadow:0 14px 40px rgba(0,0,0,.75),inset 0 0 24px rgba(0,0,0,.5);}
+  #backConfirm .bc-panel::before,#backConfirm .bc-panel::after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#b8902e,#3a2a10);border:1px solid #1a1712;}
+  #backConfirm .bc-panel::before{left:5px;top:5px;}#backConfirm .bc-panel::after{right:5px;top:5px;}
+  #backConfirm h3{font:900 18px "Arial Black","Oswald",sans-serif;letter-spacing:2px;color:#e6ddc8;
+    text-shadow:0 2px 3px #000,0 0 8px rgba(228,174,57,.2);text-align:center;margin:4px 0 10px;}
+  #backConfirm h3::before{content:"◀ ";color:#c47a3a;}
+  #backConfirm p{font:12px/1.7 "Microsoft YaHei";color:#cdbf9e;text-align:center;margin:0 0 14px;}
+  #backConfirm .bc-btns{display:flex;gap:8px;}
+  #backConfirm .bc-cancel{flex:1;background:
+      repeating-linear-gradient(45deg,rgba(0,0,0,.08) 0 6px,transparent 6px 12px),
+      linear-gradient(180deg,#4a463d,#2a2620);
+    border:1.5px solid #4a463d;border-radius:6px;color:#d8cbb0;
+    font:800 14px "Oswald","Microsoft YaHei";padding:10px;cursor:pointer;letter-spacing:2px;
+    box-shadow:0 3px 0 #100e0b,inset 0 1px 0 rgba(255,255,255,.05);transition:.15s;}
+  #backConfirm .bc-ok{flex:1;background:
+      repeating-linear-gradient(45deg,rgba(0,0,0,.08) 0 6px,transparent 6px 12px),
+      linear-gradient(180deg,#a65a2a,#7a3f1c);
+    border:1.5px solid #c47a3a;border-radius:6px;color:#ffeede;
+    font:900 14px "Oswald","Microsoft YaHei";padding:10px;cursor:pointer;letter-spacing:2px;
+    box-shadow:0 3px 0 #4a2610,inset 0 1px 0 rgba(255,255,255,.12);transition:.15s;}
+  #backConfirm .bc-cancel:hover{border-color:#6b6153;color:#e6ddc8;}
+  #backConfirm .bc-ok:hover{filter:brightness(1.1);}
+  #backConfirm .bc-cancel:active,#backConfirm .bc-ok:active{transform:translateY(2px);box-shadow:0 1px 0 #100e0b;}
+  /* ============ DPS 实时伤害统计 ============ */
+  #dpsBtn{position:absolute;right:8px;top:6px;width:30px;height:30px;border-radius:5px;padding:0;
+    background:linear-gradient(180deg,#3a362e,#26231d);border:1px solid #6b521a;
+    box-shadow:0 3px 0 #100e0b,inset 0 1px 0 rgba(255,255,255,.08);color:#e4ae39;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;z-index:20;transition:.12s;}
+  #dpsBtn:hover{border-color:#d98a3a;filter:brightness(1.15);}
+  #dpsBtn:active{transform:translateY(2px);box-shadow:0 1px 0 #100e0b;}
+  #dpsBtn svg{width:16px;height:16px;display:block;}
+  #dpsBtn.active{border-color:#d98a3a;box-shadow:0 0 8px rgba(217,138,58,.4),0 3px 0 #100e0b;}
+  #dpsPanel{position:absolute;right:6px;top:40px;width:150px;max-height:70%;overflow-y:auto;
+    background:rgba(18,18,18,.88);border:1px solid #6b521a;border-radius:7px;padding:6px 6px 5px;
+    box-shadow:0 4px 14px rgba(0,0,0,.6),inset 0 0 8px rgba(0,0,0,.4);z-index:19;display:none;
+    backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
+  #dpsPanel.show{display:block;}
+  #dpsPanel .dp-hd{font:800 10px "Oswald","Microsoft YaHei";color:#e4ae39;letter-spacing:1px;
+    margin-bottom:4px;padding-bottom:3px;border-bottom:1px solid #3a3225;display:flex;justify-content:space-between;}
+  #dpsPanel .dp-hd .dp-total{color:#cdbf9e;font-weight:600;}
+  .dp-row{position:relative;margin-bottom:3px;height:18px;border-radius:3px;overflow:hidden;
+    background:rgba(0,0,0,.45);border:1px solid #2a2418;}
+  .dp-bar{position:absolute;left:0;top:0;bottom:0;width:0;
+    background:linear-gradient(90deg,#9c5e1c,#e4ae39,#ffd700);transition:width .4s ease;border-radius:2px;}
+  .dp-txt{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;
+    height:100%;padding:0 4px;font:700 9px "Oswald","Microsoft YaHei",sans-serif;
+    color:#fff;text-shadow:0 1px 2px #000,0 0 3px rgba(0,0,0,.8);white-space:nowrap;line-height:1;}
+  .dp-txt .dp-name{overflow:hidden;text-overflow:ellipsis;max-width:78px;}
+  .dp-txt .dp-val{color:#ffd700;flex:none;}
+  .dp-empty{font:9px/1.5 "Microsoft YaHei";color:#6a6253;text-align:center;padding:6px 0;}
   /* ============ 战术 BUFF 面板 ============ */
   #buffOverlay{position:fixed;inset:0;z-index:900;display:none;align-items:center;justify-content:center;
     background:rgba(8,10,14,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
@@ -270,6 +339,187 @@
   .buff-card .bc-pros{padding:3px 8px;font-size:11px;line-height:1.5;color:#e6ffe6;text-shadow:0 0 2px rgba(0,0,0,.8);}
   .buff-card .bc-cons{padding:3px 8px 10px;font-size:11px;line-height:1.5;color:#ffcccc;text-shadow:1px 1px 2px #000,0 0 2px rgba(0,0,0,.8);}
   .buff-card .bc-divider{height:1px;margin:3px 8px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);}
+  /* ===== BOSS 出场特写弹窗 ===== */
+  #bossIntroOverlay{position:fixed;inset:0;z-index:950;display:none;align-items:center;justify-content:center;
+    background:rgba(4,6,10,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+  #bossIntroOverlay.show{display:flex;}
+  #bossIntroPanel{width:92%;max-width:520px;display:flex;flex-direction:column;gap:0;
+    background:linear-gradient(135deg,#1a0a0c 0%,#0f1116 50%,#1a1216 100%);
+    border:2px solid #ff3344;border-radius:14px;
+    box-shadow:0 0 30px rgba(255,51,68,.3),0 12px 60px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,51,68,.1);
+    overflow:hidden;position:relative;animation:biSlideIn .4s ease-out;}
+  @keyframes biSlideIn{from{transform:translateY(-30px) scale(.95);opacity:0;}to{transform:translateY(0) scale(1);opacity:1;}}
+  .bi-mid{display:flex;flex-direction:row;}
+  .bi-left{flex:0 0 38%;min-height:180px;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(ellipse at center,rgba(255,51,68,.12) 0%,transparent 70%);
+    border-right:1px solid rgba(255,51,68,.2);}
+  .bi-name{font:900 42px/1.2 'KaiTi','STKaiti',serif;color:#ff3344;
+    text-shadow:0 0 20px rgba(255,51,68,.6),0 0 40px rgba(255,51,68,.3),2px 2px 4px #000;
+    animation:biFlicker 1.5s ease-in-out infinite;}
+  @keyframes biFlicker{0%,100%{opacity:1;}50%{opacity:.82;}}
+  .bi-right{flex:1;min-width:0;padding:16px 18px;display:flex;flex-direction:column;gap:8px;}
+  .bi-top{display:flex;align-items:center;gap:8px;}
+  .bi-warn{font:800 11px/1 'Oswald',sans-serif;color:#ff3344;background:rgba(255,51,68,.15);
+    padding:3px 8px;border-radius:4px;letter-spacing:1.5px;border:1px solid rgba(255,51,68,.3);}
+  .bi-title{font:900 18px/1 'KaiTi','STKaiti',serif;color:#fff;text-shadow:0 0 8px rgba(255,51,68,.4);}
+  .bi-story{font:13px/1.6 'Microsoft YaHei',sans-serif;color:#bbb;
+    background:rgba(0,0,0,.25);border-radius:6px;padding:8px 10px;border-left:2px solid rgba(255,51,68,.3);}
+  .bi-skill-label{font:800 11px/1 'Oswald','Microsoft YaHei',sans-serif;color:#e4ae39;letter-spacing:1px;margin-top:2px;}
+  .bi-skill{font:600 13px/1.5 'Microsoft YaHei',sans-serif;color:#ffd700;
+    background:rgba(228,174,57,.08);border-radius:6px;padding:8px 10px;border:1px solid rgba(228,174,57,.2);
+    text-shadow:0 0 4px rgba(228,174,57,.2);}
+  .bi-close-btn{display:block;width:160px;margin:0 auto 14px;
+    font:700 13px/1 'Oswald','Microsoft YaHei',sans-serif;
+    background:linear-gradient(180deg,#ff3344,#cc1a2a);color:#fff;border:none;border-radius:6px;
+    padding:9px 28px;cursor:pointer;letter-spacing:1px;
+    box-shadow:0 4px 12px rgba(255,51,68,.3);transition:transform .15s ease;}
+  .bi-close-btn:hover{transform:scale(1.05);box-shadow:0 6px 16px rgba(255,51,68,.5);}
+  /* ============ 局外天赋强化 ============ */
+  #talentBtn{position:absolute;right:calc(10% - 10px);width:18%;max-width:72px;min-width:54px;top:74%;height:auto;aspect-ratio:1/1.15;
+    background:transparent;border:none;cursor:pointer;padding:0;display:flex;flex-direction:column;align-items:center;
+    transition:transform .15s;-webkit-tap-highlight-color:transparent;overflow:visible;}
+  #talentBtn:active{transform:scale(.94);}
+  .tb-badge-ic{width:100%;aspect-ratio:1;position:relative;
+    background:
+      radial-gradient(circle at 50% 30%,rgba(228,174,57,.22) 0 38%,transparent 70%),
+      linear-gradient(180deg,#3a362e,#1a1712);
+    border:2px solid #6b521a;border-radius:14px;
+    box-shadow:0 4px 10px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.1),0 0 0 2px rgba(0,0,0,.4);
+    display:flex;align-items:center;justify-content:center;}
+  .tb-badge-ic::before{content:"";position:absolute;left:50%;top:50%;width:124%;height:124%;
+    transform:translate(-50%,-50%);pointer-events:none;z-index:0;
+    background:repeating-conic-gradient(from 0deg,rgba(228,174,57,.10) 0 12deg,transparent 12deg 30deg);
+    border-radius:50%;opacity:.5;}
+  .tb-shield{width:54%;height:54%;position:relative;z-index:1;filter:drop-shadow(0 1px 2px #000) drop-shadow(0 0 4px rgba(228,174,57,.45));}
+  .tb-shield svg{width:100%;height:100%;display:block;}
+  .tb-caption{margin-top:4px;font:800 11px "Oswald","Microsoft YaHei",sans-serif;letter-spacing:3px;
+    color:#e6ddc8;text-shadow:0 1px 2px #000;white-space:nowrap;padding-right:3px;}
+  .tb-redot{position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;padding:0 5px;
+    background:radial-gradient(circle at 30% 30%,#ff7a7a,#c91d1d 70%);
+    border:2px solid #1a1712;border-radius:11px;
+    font:900 11px "Oswald",sans-serif;color:#fff;line-height:18px;text-align:center;
+    box-shadow:0 0 8px rgba(255,40,40,.7),inset 0 1px 0 rgba(255,255,255,.3);
+    animation:talentRedot 1.4s ease-in-out infinite;z-index:2;}
+  @keyframes talentRedot{0%,100%{transform:scale(1);}50%{transform:scale(1.12);box-shadow:0 0 14px rgba(255,40,40,.9);}}
+  #talentBtn:hover .tb-badge-ic{border-color:#d98a3a;box-shadow:0 6px 16px rgba(217,138,58,.4),inset 0 1px 0 rgba(255,255,255,.15);}
+  #talentOverlay{position:fixed;inset:0;z-index:800;display:none;align-items:center;justify-content:center;
+    background:rgba(8,6,3,.86);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);padding:10px;overflow-y:auto;}
+  #talentOverlay.show{display:flex;}
+  #talentPanel{width:100%;max-width:460px;margin:auto;position:relative;
+    background:
+      repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 48px),
+      linear-gradient(180deg,rgba(40,32,20,.97),rgba(18,14,8,.97));
+    border:2px solid #5c4a24;border-radius:12px;
+    box-shadow:0 14px 44px rgba(0,0,0,.75),inset 0 0 28px rgba(0,0,0,.55),0 0 0 1px rgba(228,174,57,.12);
+    padding:14px 13px 12px;}
+  #talentPanel::before,#talentPanel::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#b8902e,#3a2a10);border:1px solid #1a1712;box-shadow:inset 0 0 4px #000;z-index:2;}
+  #talentPanel::before{left:6px;top:6px;}#talentPanel::after{right:6px;top:6px;}
+  .tp-hd{display:flex;align-items:center;gap:8px;margin:6px 2px 10px;}
+  .tp-title{font:900 21px "Arial Black","Oswald",sans-serif;letter-spacing:3px;color:#e6ddc8;
+    text-shadow:0 2px 3px #000,0 0 10px rgba(228,174,57,.25);flex:none;}
+  .tp-title::before{content:"✦ ";color:#e4ae39;text-shadow:0 0 8px rgba(228,174,57,.7);}
+  .tp-pts{margin-left:auto;display:flex;align-items:center;gap:6px;
+    background:linear-gradient(180deg,rgba(60,46,18,.9),rgba(30,22,8,.9));
+    border:1.5px solid #e4ae39;border-radius:8px;padding:4px 10px;
+    box-shadow:0 0 14px rgba(228,174,57,.3),inset 0 0 10px rgba(0,0,0,.5);
+    font:800 11px "Oswald","Microsoft YaHei",sans-serif;color:#cdbf9e;letter-spacing:1px;}
+  .tp-pts .pt-spark{color:#ffe27a;font-size:13px;filter:drop-shadow(0 0 4px rgba(255,226,122,.8));}
+  .tp-pts b{color:#ffd700;font:900 19px "Oswald","Arial Black",sans-serif;
+    text-shadow:0 0 10px rgba(255,215,0,.8),0 1px 2px #000;margin-left:2px;}
+  #talentHelpBtn,#talentCloseBtn{background:linear-gradient(180deg,#3a362e,#26231d);border:1px solid #5c4a24;border-radius:6px;
+    color:#cdbf9e;font:900 13px sans-serif;width:28px;height:28px;cursor:pointer;line-height:1;padding:0;flex:none;
+    box-shadow:0 2px 0 #100e0b,inset 0 1px 0 rgba(255,255,255,.08);}
+  #talentHelpBtn:hover,#talentCloseBtn:hover{border-color:#d98a3a;color:#e6ddc8;}
+  #talentHelpBtn:active,#talentCloseBtn:active{transform:translateY(2px);box-shadow:0 0 0 #100e0b;}
+  #talentGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+  .tc{display:flex;gap:6px;align-items:stretch;
+    background:linear-gradient(180deg,#2f2a22,#19150e);border:1.5px solid #4a3f2e;border-radius:8px;padding:6px;
+    position:relative;box-shadow:inset 0 0 8px rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.3);
+    transition:border-color .15s,box-shadow .15s,transform .15s;overflow:hidden;}
+  .tc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#3a3225;}
+  .tc.can-up{border-color:#d98a3a;box-shadow:0 0 10px rgba(217,138,58,.35),inset 0 0 8px rgba(0,0,0,.5);}
+  .tc.can-up:hover{transform:translateY(-1px);}
+  .tc.maxed{border-color:#5a7a3a;}
+  .tc.maxed::before{background:#5a7a3a;}
+  .tc-icon-wrap{width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 40%,rgba(228,174,57,.18),rgba(0,0,0,.5) 70%);
+    border:1.5px solid #5c4a24;border-radius:7px;box-shadow:inset 0 0 6px rgba(0,0,0,.6);position:relative;}
+  .tc-icon-wrap::after{content:"";position:absolute;inset:0;border-radius:7px;pointer-events:none;
+    box-shadow:inset 0 0 8px rgba(228,174,57,.15);}
+  .tc-img{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 1px 2px #000);}
+  .tc-body{flex:1;display:flex;flex-direction:column;justify-content:space-between;min-width:0;gap:3px;}
+  .tc-row1{display:flex;align-items:baseline;gap:4px;}
+  .tc-name{font:800 10px "Oswald","Microsoft YaHei",sans-serif;color:#e6ddc8;letter-spacing:.5px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;}
+  .tc-lv{font:900 10px "Oswald",sans-serif;color:#e4ae39;flex:none;white-space:nowrap;}
+  .tc.maxed .tc-lv{color:#7fae5a;}
+  .tc-dots{display:flex;gap:2px;flex-wrap:wrap;}
+  .tc-dot{width:7px;height:7px;border-radius:1.5px;background:#3a3225;border:1px solid #2a2418;}
+  .tc-dot.on{background:linear-gradient(180deg,#e4ae39,#b8781e);border-color:#6b521a;
+    box-shadow:0 0 4px rgba(228,174,57,.6);}
+  .tc.maxed .tc-dot.on{background:linear-gradient(180deg,#7fae5a,#3c5a26);border-color:#3c5a26;
+    box-shadow:0 0 4px rgba(127,174,90,.5);}
+  .tc-add{align-self:flex-end;background:linear-gradient(180deg,#d98a3a,#9c5e1c);border:1px solid #6b521a;border-radius:5px;
+    color:#1a1208;font:900 16px "Oswald",sans-serif;width:24px;height:22px;line-height:1;cursor:pointer;padding:0;flex:none;
+    box-shadow:0 2px 0 #4a2e0e,inset 0 1px 0 rgba(255,255,255,.25);transition:transform .12s,box-shadow .12s;}
+  .tc-add:hover{filter:brightness(1.1);}
+  .tc-add:active{transform:translateY(2px);box-shadow:0 0 0 #4a2e0e;}
+  .tc-add.disabled{background:linear-gradient(180deg,#3a362e,#26231d);color:#5a5346;border-color:#2a2418;
+    box-shadow:0 1px 0 #100e0b;cursor:not-allowed;opacity:.6;}
+  .tc-add.shake{animation:talentAddShake .3s ease;}
+  @keyframes talentAddShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-2px);}75%{transform:translateX(2px);}}
+  #talentToast{text-align:center;font:700 12px "Oswald","Microsoft YaHei";color:#e0796a;
+    background:rgba(60,20,15,.7);border:1px solid #6b3030;border-radius:5px;padding:5px;margin-top:6px;
+    opacity:0;transition:.2s;pointer-events:none;}
+  #talentToast.show{opacity:1;}
+  .tp-btns{display:flex;gap:8px;margin-top:8px;}
+  #talentResetBtn{flex:1;background:
+      repeating-linear-gradient(45deg,rgba(0,0,0,.08) 0 6px,transparent 6px 12px),
+      linear-gradient(180deg,#4a2e2e,#2a1a1a);
+    border:1.5px solid #6b3030;border-radius:7px;color:#d8b8b8;
+    font:800 14px "Oswald","Microsoft YaHei";padding:10px;cursor:pointer;letter-spacing:3px;
+    box-shadow:0 3px 0 #160a0a,inset 0 1px 0 rgba(255,255,255,.05);transition:.15s;}
+  #talentSaveBtn{flex:1;background:
+      repeating-linear-gradient(45deg,rgba(0,0,0,.08) 0 6px,transparent 6px 12px),
+      linear-gradient(180deg,#7fae3a,#3c5a16);
+    border:1.5px solid #2e4a12;border-radius:7px;color:#eaf5df;
+    font:900 14px "Oswald","Microsoft YaHei";padding:10px;cursor:pointer;letter-spacing:3px;
+    box-shadow:0 3px 0 #16300a,inset 0 1px 0 rgba(255,255,255,.2),0 0 10px rgba(127,174,58,.3);transition:.15s;}
+  #talentResetBtn:active,#talentSaveBtn:active{transform:translateY(2px);box-shadow:0 1px 0 #100e0b;}
+  #talentResetBtn:hover{border-color:#9b3a3a;color:#e8c8c8;}
+  #talentSaveBtn:hover{filter:brightness(1.1);}
+  #talentTooltip{position:fixed;pointer-events:none;background:
+      linear-gradient(180deg,rgba(36,29,18,.98),rgba(22,15,8,.98));
+    color:#f2e6cc;font:11px/1.55 "Microsoft YaHei";padding:9px 11px;
+    border:1.5px solid #c8862e;border-radius:8px;display:none;z-index:850;max-width:240px;
+    box-shadow:0 6px 18px rgba(0,0,0,.7),inset 0 0 12px rgba(228,174,57,.08);}
+  #talentTooltip.show{display:block;}
+  #talentTooltip b{color:#ffd700;font-size:13px;display:block;margin-bottom:3px;text-shadow:0 0 6px rgba(255,215,0,.5);}
+  #talentTooltip .tt-effect{color:#cdbf9e;}
+  #talentTooltip .tt-lv{color:#8fbf6a;margin-top:3px;}
+  #talentTooltip .tt-cost{color:#e6be74;margin-top:3px;}
+  #talentHelpPopup{position:absolute;top:42px;right:8px;width:260px;z-index:860;display:none;
+    background:linear-gradient(180deg,rgba(36,29,18,.98),rgba(22,15,8,.98));
+    border:1.5px solid #c8862e;border-radius:8px;padding:10px 12px;
+    box-shadow:0 6px 18px rgba(0,0,0,.7);font:11px/1.6 "Microsoft YaHei";color:#cdbf9e;}
+  #talentHelpPopup.show{display:block;}
+  #talentHelpPopup h4{color:#e4ae39;font:800 12px "Oswald","Microsoft YaHei";letter-spacing:1px;margin-bottom:5px;}
+  #talentHelpPopup p{color:#b6a986;margin:0;}
+  /* 结算页：天赋点高亮奖励通栏 */
+  #over .rpt-talent-banner{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    margin:9px 0 11px;padding:11px 14px;border-radius:8px;position:relative;overflow:hidden;
+    background:linear-gradient(180deg,rgba(60,46,18,.85),rgba(30,22,8,.85));
+    border:1.5px solid #e4ae39;
+    box-shadow:0 0 18px rgba(228,174,57,.35),inset 0 0 16px rgba(228,174,57,.12);}
+  #over .rpt-talent-banner::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+    background:repeating-linear-gradient(45deg,#e4ae39 0 6px,#1a1712 6px 12px);}
+  #over .rpt-talent-banner .rtb-label{display:flex;align-items:center;gap:8px;
+    font:800 13px "Oswald","Microsoft YaHei",sans-serif;color:#e6ddc8;letter-spacing:1px;text-shadow:0 1px 2px #000;}
+  #over .rpt-talent-banner .rtb-icon{font-size:18px;filter:drop-shadow(0 0 6px rgba(228,174,57,.8));}
+  #over .rpt-talent-banner .rtb-val{font:900 28px "Oswald","Arial Black",sans-serif;color:#ffd700;
+    text-shadow:0 0 12px rgba(255,215,0,.7),0 2px 3px #000;letter-spacing:1px;}
+  #over .rpt-talent-banner .rtb-val .sign{color:#e4ae39;margin-right:2px;}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 </head>
@@ -278,10 +528,28 @@
   <div id="coverInner">
     <img id="coverImg" src="main_interface/主界面.png" alt="BUFFGO 警察与土匪">
     <button id="goBtn" aria-label="开始游戏"></button>
+    <button id="talentBtn" aria-label="天赋强化">
+      <div class="tb-badge-ic">
+        <div class="tb-shield">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2 L28 7 V16 C28 24 22 29 16 31 C10 29 4 24 4 16 V7 Z" fill="#2a2118" stroke="#e4ae39" stroke-width="1.5"/>
+            <path d="M16 6 L24 9.5 V15.5 C24 21 20 25 16 26.5 C12 25 8 21 8 15.5 V9.5 Z" fill="none" stroke="#b8781e" stroke-width="1"/>
+            <g fill="#e4ae39">
+              <circle cx="16" cy="13" r="2.2"/>
+              <rect x="14.8" y="15" width="2.4" height="7" rx="1"/>
+              <path d="M10 20.5 L22 20.5" stroke="#b8781e" stroke-width="1.2" fill="none"/>
+            </g>
+          </svg>
+        </div>
+        <span class="tb-redot" id="talentRedot" style="display:none">+0</span>
+      </div>
+      <div class="tb-caption">天赋</div>
+    </button>
   </div>
 </div>
 <div id="app">
   <div id="gtitle">
+    <button id="backBtn" aria-label="返回主界面"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M10 3 L5 8 L10 13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <span class="en">BUFF<b>GO</b></span>
     <span class="cn">：警察与土匪</span>
   </div>
@@ -297,6 +565,11 @@
   </div>
   <div id="wrap">
     <canvas id="cv" width="460" height="400"></canvas>
+    <button id="dpsBtn" aria-label="伤害统计"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="8" width="3" height="6" fill="currentColor"/><rect x="6.5" y="5" width="3" height="9" fill="currentColor"/><rect x="11" y="2" width="3" height="12" fill="currentColor"/></svg></button>
+    <div id="dpsPanel">
+      <div class="dp-hd"><span>伤害统计</span><span class="dp-total" id="dpsTotal">0</span></div>
+      <div id="dpsList"></div>
+    </div>
   </div>
   <div id="ctrl">
     <div class="row">
@@ -354,8 +627,11 @@
       <h1 class="rpt-title" data-t="防线失守">防线失守</h1>
       <span class="alarm"></span>
     </div>
-    <div class="rpt-reason">人质已被劫持，任务失败</div>
     <div class="rpt-eval">本局评价：<b id="oEval">武器大师</b></div>
+    <div class="rpt-talent-banner" id="oTalentBanner">
+      <div class="rtb-label"><span class="rtb-icon">✦</span>本局获得天赋点</div>
+      <div class="rtb-val"><span class="sign">+</span><span id="oTalent">0</span></div>
+    </div>
     <div class="rpt-cards">
       <div class="rc"><span class="rc-lb">坚守波数</span><span class="rc-v"><b id="oWave">0</b> 波</span><span class="rc-new hide" id="oWaveNew">新纪录</span></div>
       <div class="rc"><span class="rc-lb">合成武器</span><span class="rc-v"><b id="oCombos">0</b> 把</span></div>
@@ -393,7 +669,54 @@
     <div id="buffCards"></div>
   </div>
 </div>
+<div id="backConfirm">
+  <div class="bc-panel">
+    <h3>返回主界面</h3>
+    <p>确定要放弃当前对局并返回主界面吗？</p>
+    <div class="bc-btns">
+      <button class="bc-cancel">取消</button>
+      <button class="bc-ok">确定</button>
+    </div>
+  </div>
+</div>
+<div id="talentOverlay">
+  <div id="talentPanel">
+    <div class="tp-hd">
+      <span class="tp-title">天赋强化</span>
+      <span class="tp-pts"><span class="pt-spark">✨</span>可用点数:<b id="talentPts">0</b></span>
+      <button id="talentHelpBtn" aria-label="规则说明">?</button>
+      <button id="talentCloseBtn" aria-label="关闭">✕</button>
+    </div>
+    <div id="talentHelpPopup">
+      <h4>天赋获取方式</h4>
+      <p>单局结算后根据波次获得天赋点：每 5 波 +2 点，30 波后（不含 30）每 5 波 +3 点。<br>首次到达 10/20/30…等 10 的倍数波次额外奖励 5 点。例如首次玩到第 20 波，共额外奖励 10 点。</p>
+    </div>
+    <div id="talentGrid"></div>
+    <div id="talentToast"></div>
+    <div class="tp-btns">
+      <button id="talentResetBtn">重置</button>
+      <button id="talentSaveBtn">保存</button>
+    </div>
+  </div>
+</div>
+<div id="talentTooltip"></div>
 <div id="tut" aria-hidden="true"></div>
+<div id="bossIntroOverlay">
+  <div id="bossIntroPanel">
+    <div class="bi-mid">
+      <div class="bi-left">
+        <div class="bi-name" id="biName"></div>
+      </div>
+      <div class="bi-right">
+        <div class="bi-top"><span class="bi-warn">⚠ WARNING</span><span class="bi-title" id="biTitle"></span></div>
+        <div class="bi-story" id="biStory"></div>
+        <div class="bi-skill-label">特色技能</div>
+        <div class="bi-skill" id="biSkill"></div>
+      </div>
+    </div>
+    <button id="biCloseBtn" class="bi-close-btn">关闭 (3s)</button>
+  </div>
+</div>
 <script>
 "use strict";
 /* ============ 布局：棋盘=中央高台，通道环绕四周（每局随机曲折）============ */
@@ -434,6 +757,8 @@ function genLayout(){
   pathCells.forEach(i=>grid[i].road=true);
   FIXED_WALL.forEach(([c,r])=>grid[idx(c,r)].wall=true);
   FIXED_OPEN.forEach(([c,r])=>grid[idx(c,r)].open=true);
+  const gl=talentLevels.grid||0;
+  for(let i=0;i<gl&&i<EXTRA_OPEN_CELLS.length;i++){const[ec,er]=EXTRA_OPEN_CELLS[i];const ci=idx(ec,er);grid[ci].wall=false;grid[ci].open=true;}
   buildPathPoints();
 }
 
@@ -447,9 +772,9 @@ const W={
   longwang:{n:'龙王',    proto:'M4A4',  tier:'RED', icon:'🐲',mode:'rifle',  dmg:35, cd:0.444,rng:130,dt:[35,60,100,180,350],bleed:{d:5,dps:30},breach:5},
   huoshen :{n:'火神',    proto:'AK-47', tier:'RED', icon:'🔥',mode:'fullfire',dmg:5, cd:2.222,rng:9999,burn:{d:2,pct:0.04},dt:[5,10,20,40,80]},
   yehe    :{n:'野荷',    proto:'AK-47', tier:'RED', icon:'🌸',mode:'root',   dmg:10, cd:2.5,rng:130,root:1,dt:[10,20,40,80,160]},
-  wangshe :{n:'王蛇',    proto:'驾驶手套',tier:'RED',icon:'🐍',mode:'melee',  dmg:50, cd:0.667,rng:78,dt:[50,80,150,250,450],aoe:90,cripple:1.5},
+  wangshe :{n:'王蛇',    proto:'驾驶手套',tier:'RED',icon:'🐍',mode:'melee',  dmg:50, cd:0.667,rng:78,dt:[50,80,150,250,450],cripple:1.5},
   huoshe  :{n:'火蛇',    proto:'AK-47', tier:'PINK',icon:'🔥',mode:'rifle',  dmg:40, cd:0.419,rng:130,burn:{d:2,pct:0.02},dt:[40,65,100,150,300]},
-  yehuo   :{n:'野火',    proto:'AWP',   tier:'PINK',icon:'🔥',mode:'aoefire',dmg:55, cd:1.111,rng:150,aoe:130,burn:{d:2,pct:0.02},dt:[55,70,110,180,350]},
+  yehuo   :{n:'野火',    proto:'AWP',   tier:'PINK',icon:'🔥',mode:'sniper',dmg:55, cd:1.111,rng:200,burn:{d:2,pct:0.02},dt:[55,70,110,180,350],explode:60},
   aishen  :{n:'爱神',    proto:'AK-47', tier:'PINK',icon:'💘',mode:'charm',  dmg:15, cd:1.111,rng:130,reverse:2,dt:[15,30,60,100,200]},
   dao :{n:'匕首',  proto:'刀',tier:'BLUE',icon:'🗡️',mode:'melee', dmg:18,cd:0.667,rng:70,lv:true,fkind:'knife',dt:[18,36,60,90,180]},
   shou:{n:'手枪',  proto:'手',tier:'BLUE',icon:'🔫',mode:'rifle', dmg:13,cd:0.5, rng:100,lv:true,fkind:'pistol',dt:[13,23,45,80,150]},
@@ -479,17 +804,22 @@ function reset(){
   enemies=[];bullets=[];fx=[];gold=12;lives=3;wave=0;boxCount=0;tray=[];sel=-1;started=false;
   spawnLeft=0;spawnT=0;enemyHP=16;running=true;drag=null;curWeapons=[];bossPending=false;shake=0;boxesSinceCombo=0;shovelCount=0;waveBuff=null;empBlasts=[];
   gameStartTime=0;
+  planeFx=null;lockedWeapons={};jammedWeapons={};
   tempWaveHpMul=1;tempKillGoldMul=1;discountCasesRemaining=0;headshotBuffWaves=0;hawkeyeBuffWaves=0;adrenalineBuffWaves=0;highRiskBuffWaves=0;hasPanShield=false;dmgBuffMul=1;atkSpdMul=1;atkRangeMul=1;permanentSpdMul=1;pendingAllinDmg=0;pendingRush=false;pendingEco=false;
   stats={kills:0,damage:0,streak:0,maxStreak:0,combos:0};
   document.getElementById('over').classList.remove('show');
   document.getElementById('startBtn').classList.remove('hide');
   paused=false;const pb=document.getElementById('restartBtn');if(pb)pb.textContent='⏸ 暂停';
+  dpsPanelOpen=false;dpsAccum=0;
+  const dpsB=document.getElementById('dpsBtn'),dpsP=document.getElementById('dpsPanel');
+  if(dpsB)dpsB.classList.remove('active');if(dpsP)dpsP.classList.remove('show');
+  applyTalents();
   renderTray();updateHud();tip('开箱得碎片 → 点碎片再点白格放置；同名武器字拖到一起可升级');
 }
 function tip(s){document.getElementById('tip').innerHTML=s;}
 function showWaveBuff(){const el=document.getElementById('waveBuff');if(el&&waveBuff){el.textContent='第'+wave+'波加强：'+waveBuff.name;el.style.display='block';}}
 function hideWaveBuff(){const el=document.getElementById('waveBuff');if(el)el.style.display='none';}
-function updateHud(){hWave.textContent=wave;hGold.textContent=gold;hLives.textContent='❤'.repeat(Math.max(0,lives))||'—';hBest.textContent=best;let cost=12+3*boxCount;if(discountCasesRemaining>0)cost=Math.floor(cost/2);boxBtn.textContent='武器箱 💰'+cost;boxBtn.disabled=gold<cost;}
+function updateHud(){hWave.textContent=wave;hGold.textContent=gold;hLives.textContent='❤'.repeat(Math.max(0,lives))||'—';hBest.textContent=best;let cost=Math.round((12+3*boxCount)*(1-0.02*(talentLevels.discount||0)));if(discountCasesRemaining>0)cost=Math.floor(cost/2);boxBtn.textContent='武器箱 💰'+cost;boxBtn.disabled=gold<cost;}
 
 /* ============ 开箱 / 候选区 ============ */
 /* ---- 抽卡子池 ---- */
@@ -533,7 +863,7 @@ function rollOne(){
 function capPush(keys,roller){let k,t=0;do{k=roller();t++;}while(keys.filter(x=>x===k).length>=2&&t<30);keys.push(k);} // 同字≤2
 document.getElementById('boxBtn').onclick=()=>{
   if(window.TUT&&TUT.active&&TUT.stepId()!=='box')return;   // 引导中仅“打开武器箱”步骤可开箱
-  const cost=12+3*boxCount;let actualCost=cost;if(discountCasesRemaining>0){actualCost=Math.floor(cost/2);discountCasesRemaining--;}
+  const cost=Math.round((12+3*boxCount)*(1-0.02*(talentLevels.discount||0)));let actualCost=cost;if(discountCasesRemaining>0){actualCost=Math.floor(cost/2);discountCasesRemaining--;}
   if(gold<actualCost)return;gold-=actualCost;
   const n=boxCount;boxCount++;
   const keys=[];
@@ -557,7 +887,7 @@ function pieceColor(k){if(k==='shovel')return'#6b4f33';if(ATK[k])return TIER[W[A
 function charColor(k){if(k==='shovel')return'#6b4f33';if(ATK[k])return'#2b241c';return'#e0791a';}
 function renderTray(){
   const box=document.getElementById('tray');box.innerHTML='';
-  if(tray.length===0){for(let i=0;i<5;i++){const d=document.createElement('div');d.className='piece used';box.appendChild(d);}return;}
+  if(tray.length===0){for(let i=0;i<5+(talentLevels.candidate||0);i++){const d=document.createElement('div');d.className='piece used';box.appendChild(d);}return;}
   tray.forEach((p,i)=>{
     const d=document.createElement('div');
     if(p.used){d.className='piece used';box.appendChild(d);return;}   // 已用/已上场：空槽，不留原字
@@ -690,52 +1020,174 @@ function startWave(){wave++;if(gameStartTime===0)gameStartTime=Date.now();tickBu
   if(window.TUT)TUT.notify('start');}
 document.getElementById('startBtn').onclick=()=>{audio();if(typeof Howler!=='undefined'&&Howler.ctx&&Howler.ctx.state==='suspended')Howler.ctx.resume();if(window.TUT&&TUT.active&&TUT.stepId()!=='start')return;if(buffPending)return;if(!started)startWave();};
 function spawnEnemy(){const spd=(wave>=5?53*1.2:53)*permanentSpdMul;const isElite=wave>=20&&Math.random()<0.15;const e={t:0,hp:enemyHP,max:enemyHP,spd,burn:0,bpct:0,bflat:0,rev:0,stun:0,bleed:0,bleedDps:0,breach:0,cripple:0,x:PATH[0][0],y:PATH[0][1]};if(isElite){e.elite=true;e.hp=enemyHP*3;e.max=e.hp;e.spd=spd*0.7;}if(waveBuff)waveBuff.apply(e);if(pendingAllinDmg>0){e.hp-=pendingAllinDmg;if(e.hp<=0)e.hp=1;e.max=Math.max(e.max,e.hp);}enemies.push(e);}
-const BOSSES=['鸡王','老K','挂B','G胖','拉登'];
-const BOSS_HP=[300,800,1500,2600];                  // 第4/8/12/16波 BOSS 血量
+const BOSSES=['鸡王','陀螺挂','全图挂','锁头挂','回溯挂','穿墙挂','本拉登'];
+const BOSS_HP_BASE=[300,800,1500,2600];
 function bossHP(bi){
-  if(bi<=BOSS_HP.length)return BOSS_HP[bi-1];
-  if(bi<=5)return BOSS_HP[BOSS_HP.length-1]+(bi-BOSS_HP.length)*1300; // 第20波：3900
-  return 3900+(bi-5)*3000;
+  let base;
+  if(bi<=BOSS_HP_BASE.length)base=BOSS_HP_BASE[bi-1];
+  else if(bi<=7)base=BOSS_HP_BASE[BOSS_HP_BASE.length-1]+(bi-BOSS_HP_BASE.length)*1300;
+  else base=3900+(bi-7)*3000;
+  return Math.round(base*1.7);
 }
+const BOSS_DATA=[
+  {name:'鸡王',story:'地图各处的中立霸主，传说是 CS2 本体，别随意开枪招惹，听到枪声会疯狂逃窜。',skill:'【移动加速】移动速度提升 20%。'},
+  {name:'陀螺挂',story:'永不停歇的旋转狂人，身躯高速盘旋搅乱所有人瞄准。',skill:'【旋转闪避】被攻击时有 20% 的概率判定为丢失 (Miss)。'},
+  {name:'全图挂',story:'整张地图尽收眼底，所有人的位置一览无余，只有他偷袭别人，没有人能偷袭他。',skill:'【绝对霸体】完全免疫所有控制效果（缠绕、减速等）。'},
+  {name:'锁头挂',story:'枪口自带磁吸效果，子弹认准往脑袋跑，见神杀神，见佛杀佛。',skill:'【精确压制】每 5 秒自动锁定全场等级最高的武器，使其攻击力降低 50%，持续 3 秒。'},
+  {name:'回溯挂',story:'能拉扯时间线，肆意篡改对战结果，你打中他不算数，倒回几秒重新交手。',skill:'【时间倒流】每 5 秒回溯到自身 2 秒前的位置，并瞬间恢复 10% 最大生命值。'},
+  {name:'穿墙挂',story:'墙体形同虚设，子弹无视所有障碍物，隔着墙壁就能发起突袭。',skill:'【无视地形】穿越地形障碍，直接向人质方向移动。'},
+  {name:'本拉登',story:'世界头号恐怖分子，911 劫持一架民航飞机撞向美国双子塔。',skill:'【自杀式袭击】呼叫一架飞机随机锁定 1 座武器并造成撞击，使该武器瘫痪 30 秒（无法攻击、无法移动）。'}
+];
+const BOSS_SPEED=20; // 原来40砍半
 let bossPending=false;
-function spawnBoss(){const b0=Math.floor(wave/4)-1,name=BOSSES[b0%BOSSES.length],hp=bossHP(b0+1);const e={t:0,hp,max:hp,spd:40,burn:0,bpct:0,bflat:0,rev:0,stun:0,bleed:0,bleedDps:0,breach:0,cripple:0,boss:true,name,x:PATH[0][0],y:PATH[0][1]};if(waveBuff)waveBuff.apply(e);enemies.push(e);tip('⚠ BOSS 来袭：'+name+'！');addShake(4);}
+let bossSkills={}; // 当前BOSS技能状态
+let planeFx=null;   // 本拉登飞机动画
+let lockedWeapons={}; // gi -> {t} 锁头挂锁定的武器
+let jammedWeapons={}; // gi -> {t} 本拉登瘫痪的武器
+function spawnBoss(){
+  const b0=Math.floor(wave/4)-1,name=BOSSES[b0%BOSSES.length],hp=bossHP(b0+1);
+  const e={t:0,hp,max:hp,spd:BOSS_SPEED,burn:0,bpct:0,bflat:0,rev:0,stun:0,bleed:0,bleedDps:0,breach:0,cripple:0,boss:true,name,bossType:b0%7,x:PATH[0][0],y:PATH[0][1],
+    _skillT:0,_skillT2:0,_posHistory:[]};
+  if(e.bossType===5){ // 穿墙挂：两段直线移动
+    e.wallHack=true;
+    e._wp1=cellCenter(0,4); // (0,4) 左下角
+    e._wp2=PATH[PATH.length-1]; // 终点
+    e._wallPhase=0; // 0=第一段(0,0)->(0,4), 1=第二段(0,4)->终点
+  }
+  if(waveBuff)waveBuff.apply(e);
+  enemies.push(e);
+  tip('⚠ BOSS 来袭：'+name+'！');
+  addShake(4);
+  showBossIntro(b0%7);
+}
+/* ===== BOSS 出场特写弹窗 ===== */
+let bossIntroTimer=null,bossIntroCountdown=3;
+function showBossIntro(bossType){
+  const data=BOSS_DATA[bossType]||BOSS_DATA[0];
+  const overlay=document.getElementById('bossIntroOverlay');
+  document.getElementById('biName').textContent=data.name;
+  document.getElementById('biTitle').textContent='BOSS：'+data.name;
+  document.getElementById('biStory').textContent=data.story;
+  document.getElementById('biSkill').textContent=data.skill;
+  // 暂停游戏
+  paused=true;
+  // 显示弹窗
+  overlay.classList.add('show');
+  // 倒计时
+  bossIntroCountdown=3;
+  const btn=document.getElementById('biCloseBtn');
+  btn.textContent='关闭 ('+bossIntroCountdown+'s)';
+  if(bossIntroTimer)clearInterval(bossIntroTimer);
+  bossIntroTimer=setInterval(()=>{
+    bossIntroCountdown--;
+    if(bossIntroCountdown<=0){closeBossIntro();}
+    else{btn.textContent='关闭 ('+bossIntroCountdown+'s)';}
+  },1000);
+}
+function closeBossIntro(){
+  if(bossIntroTimer){clearInterval(bossIntroTimer);bossIntroTimer=null;}
+  document.getElementById('bossIntroOverlay').classList.remove('show');
+  paused=false;
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  var btn=document.getElementById('biCloseBtn');if(btn)btn.onclick=closeBossIntro;
+});
+var _biBtn=document.getElementById('biCloseBtn');if(_biBtn)_biBtn.onclick=closeBossIntro;
 function nearestTargets(cx,cy,rng,n){rng*=atkRangeMul;const l=enemies.filter(e=>e.hp>0&&Math.hypot(e.x-cx,e.y-cy)<=rng).sort((a,b)=>b.t-a.t);return n?l.slice(0,n):l;}
 function fire(w){
   const d=w.def,dmg=wdmg(w);
-  if(d.mode==='fullfire'){const all=enemies.filter(e=>e.hp>0);if(!all.length)return false;const flat=wdmg(w);all.forEach(e=>{hit(e,dmg,w);if(d.burn){e.burn=d.burn.d;e.bpct=d.burn.pct||0;e.bflat=flat;e._burnGI=w.gi;}});fxRing(230,200,290,'#ff6b1a',.5);sfx('boom');addShake(2.5);return true;}
-  if(d.mode==='aoefire'){const R=d.aoe||d.rng;const ts=nearestTargets(w.cx,w.cy,R);if(!ts.length)return false;ts.forEach(e=>{hit(e,dmg,w);if(d.burn){e.burn=d.burn.d;e.bpct=d.burn.pct||0;e.bflat=dmg;e._burnGI=w.gi;}});fxRing(w.cx,w.cy,R,'#ff6b1a',.4);sfx('boom');addShake(1.8);return true;}
-  if(d.mode==='root'){const ts=nearestTargets(w.cx,w.cy,d.rng);if(!ts.length)return false;ts.forEach(e=>{hit(e,dmg,w);const dur=e._rootResist?d.root*0.5:d.root;e.stun=Math.max(e.stun,dur);fx.push({type:'lotus',x:e.x,y:e.y,life:.6,t:.6});});fxRing(w.cx,w.cy,d.rng,'#d32ce6',.4);sfx('magic');return true;}
-  if(d.mode==='charm'){const ts=nearestTargets(w.cx,w.cy,d.rng,1);if(!ts.length)return false;const e=ts[0];hit(e,dmg,w);const dur=e._charmResist?d.reverse*0.5:d.reverse;e.rev=Math.max(e.rev,dur);fx.push({type:'heart',x:e.x,y:e.y,life:.7,t:.7});sfx('magic');return true;}
+  if(d.mode==='fullfire'){const all=enemies.filter(e=>e.hp>0);if(!all.length)return false;const flat=wdmg(w);all.forEach(e=>{hit(e,dmg,w);if(d.burn){e.burn=d.burn.d;e.bpct=d.burn.pct||0;e.bflat=flat;e._burnGI=w.gi;}});fxRing(230,200,290,'#ff6b1a',.5);sfx('boom');addShake(2.5);triggerAtkAnim(w,'pulse',0);return true;}
+  if(d.mode==='aoefire'){const R=d.aoe||d.rng;const ts=nearestTargets(w.cx,w.cy,R);if(!ts.length)return false;ts.forEach(e=>{hit(e,dmg,w);if(d.burn){e.burn=d.burn.d;e.bpct=d.burn.pct||0;e.bflat=dmg;e._burnGI=w.gi;}});fxRing(w.cx,w.cy,R,'#ff6b1a',.4);sfx('boom');addShake(1.8);triggerAtkAnim(w,'pulse',0);return true;}
+  if(d.mode==='root'){const ts=nearestTargets(w.cx,w.cy,d.rng).filter(e=>!(e.boss&&e.bossType===2));if(!ts.length)return false;ts.forEach(e=>{hit(e,dmg,w);const dur=e._rootResist?d.root*0.5:d.root;e.stun=Math.max(e.stun,dur);fx.push({type:'lotus',x:e.x,y:e.y,life:.6,t:.6});});fxRing(w.cx,w.cy,d.rng,'#d32ce6',.4);sfx('magic');triggerAtkAnim(w,'spin',0);return true;}
+  if(d.mode==='charm'){const ts=nearestTargets(w.cx,w.cy,d.rng,1).filter(e=>!(e.boss&&e.bossType===2));if(!ts.length)return false;const e=ts[0];hit(e,dmg,w);const dur=e._charmResist?d.reverse*0.5:d.reverse;e.rev=Math.max(e.rev,dur);fx.push({type:'heart',x:e.x,y:e.y,life:.7,t:.7});sfx('magic');triggerAtkAnim(w,'bounce',0);return true;}
   if(d.mode==='shotgun'){const ts=nearestTargets(w.cx,w.cy,d.rng,3);if(!ts.length)return false;
     const baseAng=Math.atan2(ts[0].y-w.cy,ts[0].x-w.cx);
     ts.forEach(e=>{hit(e,dmg,w);if(d.burn){e.burn=d.burn.d;e.bpct=d.burn.pct||0;e.bflat=dmg;e._burnGI=w.gi;}fx.push({type:'tracer',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.14,t:.14,c:'#fff',wdt:1.4});sparkBurst(e.x,e.y,5,d.burn?'#ff8a3a':'#fff');});
     for(let k=-2;k<=2;k++){const a2=baseAng+k*0.17,L=d.rng*0.62;fx.push({type:'tracer',x:w.cx,y:w.cy,tx:w.cx+Math.cos(a2)*L,ty:w.cy+Math.sin(a2)*L,life:.12,t:.12,c:'#fff',wdt:1});}
-    muzzle(w,baseAng);sfx('shotgun');addShake(2.4);return true;}
+    muzzle(w,baseAng);sfx('shotgun');addShake(2.4);triggerAtkAnim(w,'shotgun',baseAng);return true;}
   const ts=nearestTargets(w.cx,w.cy,d.rng,1);if(!ts.length)return false;const e=ts[0];
   const ang=Math.atan2(e.y-w.cy,e.x-w.cx);
   if(d.mode==='melee'){
-    if(d.aoe){ // 王蛇：范围近战 + 瘫痪
-      const ts=nearestTargets(w.cx,w.cy,d.aoe);
-      if(!ts.length)return false;
-      ts.forEach(e=>{hit(e,dmg,w);if(d.cripple){e.cripple=Math.max(e.cripple||0,d.cripple);}});
-      fxRing(w.cx,w.cy,d.aoe,'#e6b800',.4);sparkBurst(w.cx,w.cy,8,'#ffd633');sfx('knife');addShake(1.5);return true;
-    }
     hit(e,dmg,w);
-    fx.push({type:'swing',tx:e.x,ty:e.y,ang,life:.2,t:.2,c:'#fff'});
-    fx.push({type:'flash',x:e.x,y:e.y,r:9,life:.15,t:.15,c:'#fff'});
-    sfx('knife');addShake(1.2);return true;}
-  if(d.mode==='sniper'){hit(e,dmg,w);fx.push({type:'beam',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.2,t:.2,c:'#e4ae39'});fx.push({type:'flash',x:e.x,y:e.y,r:14,life:.2,t:.2,c:'#fff'});muzzle(w,ang);sfx('sniper');addShake(3);return true;}
+    if(d.cripple&&!(e.boss&&e.bossType===2)){e.cripple=Math.max(e.cripple||0,d.cripple);}
+    fx.push({type:'swing',tx:e.x,ty:e.y,ang,life:.2,t:.2,c:'#ffd633'});
+    fx.push({type:'flash',x:e.x,y:e.y,r:9,life:.15,t:.15,c:'#ffd633'});
+    sfx('knife');addShake(1.2);triggerAtkAnim(w,w.wid==='wangshe'?'snake':'slash',ang);return true;}
+  if(d.mode==='sniper'){
+    hit(e,dmg,w);
+    fx.push({type:'beam',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.2,t:.2,c:'#e4ae39'});
+    fx.push({type:'flash',x:e.x,y:e.y,r:14,life:.2,t:.2,c:'#fff'});
+    // 野火：以敌人为中心范围爆炸灼烧
+    if(d.explode){
+      const R=d.explode;
+      const ts=nearestTargets(e.x,e.y,R).filter(t=>t!==e);
+      ts.forEach(t=>{hit(t,dmg,w);if(d.burn){t.burn=d.burn.d;t.bpct=d.burn.pct||0;t.bflat=dmg;t._burnGI=w.gi;}});
+      // 被击中的敌人也附加灼烧
+      if(d.burn){e.burn=d.burn.d;e.bpct=d.burn.pct||0;e.bflat=dmg;e._burnGI=w.gi;}
+      fxRing(e.x,e.y,R,'#ff6b1a',.4);sparkBurst(e.x,e.y,10,'#ff8a3a');addShake(2);
+    }
+    muzzle(w,ang);sfx('sniper');addShake(3);triggerAtkAnim(w,'sniper',ang);return true;}
   // 手枪 / 冲锋枪 / 步枪：白线 hitscan
   hit(e,dmg,w);if(d.burn){e.burn=d.burn.d;e.bpct=d.burn.pct||0;e.bflat=dmg;e._burnGI=w.gi;}
   if(d.bleed){e.bleed=d.bleed.d;e.bleedDps=d.bleed.dps;e._bleedGI=w.gi;}
   if(d.breach){e.breach=Math.max(e.breach||0,d.breach);}
   const kind=d.fkind||'rifle';
-  if(kind==='smg'){fx.push({type:'tracer',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.09,t:.09,c:'#fff',wdt:1});sparkBurst(e.x,e.y,3,'#fff');sfx('smg');addShake(.6);}
-  else if(kind==='pistol'){fx.push({type:'tracer',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.13,t:.13,c:'#fff',wdt:1.5});fx.push({type:'flash',x:e.x,y:e.y,r:9,life:.16,t:.16,c:'#fff'});sfx('pistol');addShake(1);}
-  else{fx.push({type:'tracer',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.12,t:.12,c:TIER[d.tier],wdt:2});fx.push({type:'flash',x:e.x,y:e.y,r:10,life:.16,t:.16,c:TIER[d.tier]});if(d.burn)sparkBurst(e.x,e.y,4,'#ff8a3a');sfx('rifle');addShake(.8);}
+  if(kind==='smg'){fx.push({type:'tracer',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.09,t:.09,c:'#fff',wdt:1});sparkBurst(e.x,e.y,3,'#fff');sfx('smg');addShake(.6);triggerAtkAnim(w,'smg',ang);}
+  else if(kind==='pistol'){fx.push({type:'tracer',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.13,t:.13,c:'#fff',wdt:1.5});fx.push({type:'flash',x:e.x,y:e.y,r:9,life:.16,t:.16,c:'#fff'});sfx('pistol');addShake(1);triggerAtkAnim(w,'pistol',ang);}
+  else{fx.push({type:'tracer',x:w.cx,y:w.cy,tx:e.x,ty:e.y,life:.12,t:.12,c:TIER[d.tier],wdt:2});fx.push({type:'flash',x:e.x,y:e.y,r:10,life:.16,t:.16,c:TIER[d.tier]});if(d.burn)sparkBurst(e.x,e.y,4,'#ff8a3a');sfx('rifle');addShake(.8);triggerAtkAnim(w,w.wid==='huoshe'?'rifle_burn':'rifle',ang);}
   muzzle(w,ang);return true;
 }
 function muzzle(w,ang){fx.push({type:'muzzle',x:w.cx,y:w.cy,ang,life:.1,t:.1,c:'#fff'});}
+/* ===== 武器攻击动画状态 ===== */
+const ATK_ANIM_DUR={slash:0.15,snake:0.25,pistol:0.12,smg:0.12,rifle:0.15,rifle_burn:0.15,shotgun:0.25,sniper:0.3,pulse:0.3,spin:0.4,bounce:0.3};
+function triggerAtkAnim(w,type,ang){
+  const dur=ATK_ANIM_DUR[type]||0.2;
+  const anim={type,t:dur,dur,ang:ang||0};
+  if(w.gi!=null&&grid[w.gi]&&grid[w.gi].occ)grid[w.gi].occ._atkAnim=anim;
+  if(w.gj!=null&&grid[w.gj]&&grid[w.gj].occ)grid[w.gj].occ._atkAnim=anim;
+}
+/* 在渲染武器文字前应用动画变换，返回是否正在动画中 */
+function applyAtkAnim(o,cx,cy){
+  const a=o._atkAnim;if(!a||a.t<=0)return false;
+  X.save();
+  const p=1-a.t/a.dur; // 0->1 进度
+  X.translate(cx,cy);
+  switch(a.type){
+    case 'slash':{ // 刀：前冲+倾斜45度
+      const off=8*(1-p);const rot=a.ang+Math.PI/4*(1-p);
+      X.translate(Math.cos(a.ang)*off,Math.sin(a.ang)*off);
+      X.rotate(rot);break;}
+    case 'snake':{ // 王蛇：沿攻击方向拉伸scaleX(1.5)
+      X.rotate(a.ang);const s=1+0.5*(1-p);X.scale(s,1);X.rotate(-a.ang);break;}
+    case 'pistol':{ // 手枪：后坐3px
+      const off=3*(1-p);X.translate(-Math.cos(a.ang)*off,-Math.sin(a.ang)*off);break;}
+    case 'smg':{ // 冲锋枪：高频左右微震
+      const shake=Math.sin(p*30)*2*(1-p);X.translate(shake,0);break;}
+    case 'rifle':{ // 步枪：后坐6px+上抬5度
+      const off=6*(1-p);X.translate(-Math.cos(a.ang)*off,-Math.sin(a.ang)*off);
+      X.rotate(-0.087*(1-p));break;}
+    case 'rifle_burn':{ // 火蛇：步枪后坐+橙黄闪烁
+      const off=6*(1-p);X.translate(-Math.cos(a.ang)*off,-Math.sin(a.ang)*off);
+      X.rotate(-0.087*(1-p));
+      X.shadowColor='#ff8a3a';X.shadowBlur=12*(1-p);break;}
+    case 'shotgun':{ // 霰弹枪：后坐12px+横向拉宽scaleX(1.3)
+      const off=12*(1-p);X.translate(-Math.cos(a.ang)*off,-Math.sin(a.ang)*off);
+      const s=1+0.3*(1-p);X.scale(s,1);break;}
+    case 'sniper':{ // 狙击：后坐18px+仰头15度
+      const off=18*(1-p);X.translate(-Math.cos(a.ang)*off,-Math.sin(a.ang)*off);
+      X.rotate(-0.262*(1-p)); // 15度≈0.262弧度
+      break;}
+    case 'pulse':{ // 火神：放大脉冲scale(1.4)+红色高光
+      const s=1+0.4*Math.sin(p*Math.PI);X.scale(s,s);
+      X.shadowColor='#ff3b1a';X.shadowBlur=18*Math.sin(p*Math.PI);break;}
+    case 'spin':{ // 野荷：顺时针旋转360度
+      X.rotate(p*Math.PI*2);break;}
+    case 'bounce':{ // 爱神：上下爱心跳动
+      const b=Math.abs(Math.sin(p*Math.PI*3))*6*(1-p);X.translate(0,-b);break;}
+  }
+  X.translate(-cx,-cy);
+  return true;
+}
 function sparkBurst(x,y,n,c){for(let i=0;i<n;i++){const a=Math.random()*7,s=45+Math.random()*80;fx.push({type:'spark',x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:.35,t:.35,c});}}
 function spawnComboFx(wid,cx,cy){ // 合成高级枪械动画：能量爆发 + 弹出全称
   const def=W[wid],col=TIER[def.tier];
@@ -746,34 +1198,56 @@ function spawnComboFx(wid,cx,cy){ // 合成高级枪械动画：能量爆发 + �
 }
 function addShake(m){shake=Math.min(6,shake+m);}
 function mkBullet(x,y,tg,dmg,d){return{x,y,tg,dmg,spd:430,c:TIER[d.tier],burn:d.burn};}
-function hit(e,dmg,w){if(e._dead||e.hp<=0)return;let actual=dmg;if(e.breach>0)actual*=1.2;if(headshotBuffWaves>0&&w){if(Math.random()<0.25){actual*=3.0;fx.push({type:'dmg',x:e.x,y:e.y-28,val:Math.round(actual),life:.8,t:.8,crit:true});}}else if(headshotBuffWaves>0&&w){actual*=0.5;}if(e.dmgReduce)actual*=(1-e.dmgReduce);if(e.fireReduce&&w&&w.def&&(w.def.burn||w.def.mode==='fullfire'||w.def.mode==='aoefire'))actual*=(1-e.fireReduce);actual=Math.round(actual);const applied=Math.min(actual,e.hp);stats.damage+=applied;if(w){w._dmg=(w._dmg||0)+applied;const oc=grid[w.gi]&&grid[w.gi].occ;if(oc){oc._dmg=(oc._dmg||0)+applied;}}e.hp-=actual;fx.push({type:'dmg',x:e.x+(Math.random()*14-7),y:e.y-16,val:actual,life:.6,t:.6});if(e.hp<=0){if(w&&w.gj!=null){const lc=grid[w.gi].occ;const maxed=lc&&(lc.kills||0)>=150;if(maxed){const candidates=[];for(const ww of curWeapons){if(ww===w||ww.gj==null)continue;const oc2=grid[ww.gi].occ;if(oc2&&(oc2.kills||0)<150)candidates.push(oc2);}if(candidates.length>0){const target=candidates[rint(0,candidates.length-1)];target.kills=(target.kills||0)+1;}}else{if(lc)lc.kills=(lc.kills||0)+1;}}kill(e,w);}}
-function kill(e,w){if(e._dead)return;e._dead=true;gold+=Math.round((e.boss?5:1)*tempKillGoldMul);stats.kills++;stats.streak++;if(stats.streak>stats.maxStreak)stats.maxStreak=stats.streak;if(w){w._kills=(w._kills||0)+1;w._streak=(w._streak||0)+1;if(!w._maxStreak||w._streak>w._maxStreak)w._maxStreak=w._streak;const oc=grid[w.gi]&&grid[w.gi].occ;if(oc){oc._kills=(oc._kills||0)+1;oc._streak=(oc._streak||0)+1;if(!oc._maxStreak||oc._streak>oc._maxStreak)oc._maxStreak=oc._streak;}}fxRing(e.x,e.y,e.boss?48:24,'#6ea84a',.4);sparkBurst(e.x,e.y,e.boss?18:7,e.boss?'#ff6b3a':'#e8d8b0');addShake(e.boss?3:.8);if(e.elite){empBlasts.push({x:e.x,y:e.y,t:2.0});tip('⚠ 精英怪被击杀！周围武器瘫痪中…');fxRing(e.x,e.y,60,'#9b30ff',.8);fxRing(e.x,e.y,200,'#9b30ff',.5);addShake(4);}}
+function hit(e,dmg,w){if(e._dead||e.hp<=0)return;
+  // 陀螺挂：20%闪避
+  if(e.bossType===1&&Math.random()<0.2){fx.push({type:'float',x:e.x,y:e.y-20,text:'MISS',life:.8,t:.8,c:'#aaa'});return;}
+  e._hitFlash=0.25; // 受击闪红
+  let actual=dmg;if(e.breach>0)actual*=1.2;if(headshotBuffWaves>0&&w){if(Math.random()<0.25){actual*=3.0;fx.push({type:'dmg',x:e.x,y:e.y-28,val:Math.round(actual),life:.8,t:.8,crit:true});}}else if(headshotBuffWaves>0&&w){actual*=0.5;}if(e.dmgReduce)actual*=(1-e.dmgReduce);if(e.fireReduce&&w&&w.def&&(w.def.burn||w.def.mode==='fullfire'||w.def.mode==='aoefire'))actual*=(1-e.fireReduce);actual=Math.round(actual);const applied=Math.min(actual,e.hp);stats.damage+=applied;if(w){w._dmg=(w._dmg||0)+applied;const oc=grid[w.gi]&&grid[w.gi].occ;if(oc){oc._dmg=(oc._dmg||0)+applied;}}e.hp-=actual;fx.push({type:'dmg',x:e.x+(Math.random()*14-7),y:e.y-16,val:actual,life:.6,t:.6});if(e.hp<=0){if(w&&w.gj!=null){const lc=grid[w.gi].occ;const maxed=lc&&(lc.kills||0)>=150;if(maxed){const candidates=[];for(const ww of curWeapons){if(ww===w||ww.gj==null)continue;const oc2=grid[ww.gi].occ;if(oc2&&(oc2.kills||0)<150)candidates.push(oc2);}if(candidates.length>0){const target=candidates[rint(0,candidates.length-1)];target.kills=(target.kills||0)+1;}}else{if(lc)lc.kills=(lc.kills||0)+1;}}kill(e,w);}}
+function kill(e,w){if(e._dead)return;e._dead=true;gold+=Math.round((e.boss?5:1)*tempKillGoldMul)+(talentLevels.kill_gold||0);stats.kills++;stats.streak++;if(stats.streak>stats.maxStreak)stats.maxStreak=stats.streak;if(w){w._kills=(w._kills||0)+1;w._streak=(w._streak||0)+1;if(!w._maxStreak||w._streak>w._maxStreak)w._maxStreak=w._streak;const oc=grid[w.gi]&&grid[w.gi].occ;if(oc){oc._kills=(oc._kills||0)+1;oc._streak=(oc._streak||0)+1;if(!oc._maxStreak||oc._streak>oc._maxStreak)oc._maxStreak=oc._streak;}}fxRing(e.x,e.y,e.boss?48:24,'#6ea84a',.4);sparkBurst(e.x,e.y,e.boss?18:7,e.boss?'#ff6b3a':'#e8d8b0');addShake(e.boss?3:.8);if(e.elite){empBlasts.push({x:e.x,y:e.y,t:2.0});tip('⚠ 精英怪被击杀！周围武器瘫痪中…');fxRing(e.x,e.y,60,'#9b30ff',.8);fxRing(e.x,e.y,200,'#9b30ff',.5);addShake(4);}}
 function fxRing(x,y,r,c,life){fx.push({type:'ring',x,y,r,c,life:life||.4,t:life||.4});}
 
 /* ============ 战术 BUFF 配置与逻辑 ============ */
 const BUFF_POOL=[
-  // 🔴 红色 (Covert / 隐秘级)
+  // 🔴 红色 (Covert / 隐秘级) - 2个
   {id:'money_over_life',name:'要钱不要命',rarity:'red',pros:['+ 接下来5波击杀金币 x2'],cons:['- 漏掉1个敌人立即游戏失败！'],desc:'高风险高回报'},
-  {id:'scapegoat_pan',name:'背锅',rarity:'red',pros:['+ 本波人质受到的所有伤害为0'],cons:['- 仅当前波次生效'],desc:'黑锅抵挡'},
   {id:'replace',name:'汰换',rarity:'red',pros:['+ 最高级武器等级 +1'],cons:['- 随机移除场上2个字'],desc:'优化阵容'},
-  // 🟠 橙色 (Classified / 保密级)
-  {id:'allin',name:'梭哈',rarity:'orange',pros:['+ 对所有敌人造成 金币x10 伤害'],cons:['- 消耗全部金币'],desc:'孤注一掷'},
+  // 🟠 橙色 (Classified / 保密级) - 3个
+  {id:'hawkeye',name:'鹰眼',rarity:'orange',pros:['+ 攻击范围 +30%（5波）'],cons:['- 攻击速度 -25%'],desc:'鹰眼视觉'},
   {id:'drop',name:'发枪',rarity:'orange',pros:['+ 候选区 +2 随机字'],cons:['- 敌人移速永久 +5%'],desc:'空投补给'},
   {id:'sellblood',name:'卖血',rarity:'orange',pros:['+ 接下来3次开箱半价'],cons:['- 生命 -1'],desc:'用血换钱'},
-  // 🔵 蓝色 (Restricted / 受限级)
+  // 🔵 蓝色 (Restricted / 受限级) - 4个
+  {id:'scapegoat_pan',name:'背锅',rarity:'blue',pros:['+ 本波人质受到的所有伤害为0'],cons:['- 仅当前波次生效'],desc:'黑锅抵挡'},
   {id:'headshot',name:'爆头',rarity:'blue',pros:['+ 25%概率暴击 300%伤害（5波）'],cons:['- 非暴击伤害 -50%'],desc:'精准射击'},
   {id:'adrenaline',name:'肾上腺素',rarity:'blue',pros:['+ 攻击速度 +40%（5波）'],cons:['- 伤害 -25%'],desc:'战斗兴奋剂'},
-  {id:'hawkeye',name:'鹰眼',rarity:'blue',pros:['+ 攻击范围 +30%（5波）'],cons:['- 攻击速度 -25%'],desc:'鹰眼视觉'},
-  // 🟢 绿色 (Mil-Spec / 军规级)
-  {id:'eco',name:'ECO局',rarity:'green',pros:['+ 击杀金币 x2'],cons:['- 敌人血量 x2（仅本波）'],desc:'高风险高回报'},
-  {id:'sale',name:'夏促',rarity:'green',pros:['+ 免费开箱1次'],cons:['- 随机扣除 1~100 金币'],desc:'Steam夏日特卖'},
-  {id:'rush',name:'拼了',rarity:'green',pros:['+ 武器伤害 +40%（仅本波）'],cons:['- 本波击杀金币为 0'],desc:'全力输出'}
+  {id:'eco',name:'ECO局',rarity:'blue',pros:['+ 击杀金币 x2'],cons:['- 敌人血量 x2（仅本波）'],desc:'高风险高回报'},
+  // 🟢 绿色 (Mil-Spec / 军规级) - 3个
+  {id:'rush',name:'拼了',rarity:'green',pros:['+ 武器伤害 +40%（仅本波）'],cons:['- 本波击杀金币为 0'],desc:'全力输出'},
+  {id:'allin',name:'梭哈',rarity:'green',pros:['+ 对所有敌人造成 金币x10 伤害'],cons:['- 消耗全部金币'],desc:'孤注一掷'},
+  {id:'sale',name:'夏促',rarity:'green',pros:['+ 免费开箱1次'],cons:['- 随机扣除 1~100 金币'],desc:'Steam夏日特卖'}
 ];
 let buffOverlay=null,buffCardsEl=null,buffPending=false;
 function initBuffUI(){buffOverlay=document.getElementById('buffOverlay');buffCardsEl=document.getElementById('buffCards');}
 function shuffleArr(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+/* 稀有度抽取权重 */
+const BUFF_RARITY_WEIGHT={red:20,orange:30,blue:38,green:45};
+function weightedPick(pool){
+  const total=pool.reduce((s,b)=>s+(BUFF_RARITY_WEIGHT[b.rarity]||30),0);
+  let r=Math.random()*total;
+  for(const b of pool){r-=(BUFF_RARITY_WEIGHT[b.rarity]||30);if(r<=0)return b;}
+  return pool[pool.length-1];
+}
+/* 抽3张：按权重抽取，允许颜色重复但禁止同BUFF重复 */
+function rollThree(){
+  const pool=[...BUFF_POOL];const result=[];
+  for(let i=0;i<3&&pool.length>0;i++){
+    const pick=weightedPick(pool);
+    result.push(pick);
+    pool.splice(pool.indexOf(pick),1);
+  }
+  return result;
+}
 function showBuffPanel(){
-  const pool=shuffleArr([...BUFF_POOL]).slice(0,3);
+  const pool=rollThree();
   buffCardsEl.innerHTML='';
   pool.forEach(b=>{
     const r=b.rarity||'green';
@@ -792,7 +1266,7 @@ function applyBuff(id){
   else if(id==='scapegoat_pan'){hasPanShield=true;tip('背锅！黑锅已架设，本波人质伤害全部抵挡');renderPanOnMap();}
   else if(id==='eco'){tempWaveHpMul=2.0;tempKillGoldMul=2.0;pendingEco=true;}
   else if(id==='sellblood'){lives=Math.max(1,lives-1);discountCasesRemaining=3;if(lives<=1)tip('⚠ 生命危险！仅剩1点');}
-  else if(id==='sale'){const cost=12+3*boxCount;const keys=[];const n=boxCount;keys.push('shovel');capPush(keys,rollBase);capPush(keys,rollBase);capPush(keys,rollBase);capPush(keys,rollCombo);tray=keys.map(k=>({key:k,lvl:1,used:false}));sel=-1;renderTray();const deduct=Math.min(gold,rint(1,100));gold-=deduct;tip('夏促！免费开箱，扣除 '+deduct+' 金币');updateHud();}
+  else if(id==='sale'){const cost=Math.round((12+3*boxCount)*(1-0.02*(talentLevels.discount||0)));const keys=[];const n=boxCount;keys.push('shovel');capPush(keys,rollBase);capPush(keys,rollBase);capPush(keys,rollBase);capPush(keys,rollCombo);tray=keys.map(k=>({key:k,lvl:1,used:false}));sel=-1;renderTray();const deduct=Math.min(gold,rint(1,100));gold-=deduct;tip('夏促！免费开箱，扣除 '+deduct+' 金币');updateHud();}
   else if(id==='replace'){const occs=[];for(let i=0;i<grid.length;i++){if(grid[i].occ)occs.push(i);}if(occs.length<=2){tip('场上字不足，无法汰换');}else{shuffleArr(occs);const rm=occs.slice(0,2);rm.forEach(gi=>{grid[gi].occ=null;});let maxLv=0;const cands=[];for(let i=0;i<grid.length;i++){if(grid[i].occ){const lv=grid[i].occ.lvl||1;if(lv>maxLv){maxLv=lv;cands.length=0;cands.push(i);}else if(lv===maxLv)cands.push(i);}}if(cands.length){const t=cands[rint(0,cands.length-1)];grid[t].occ.lvl=(grid[t].occ.lvl||1)+1;fxRing(...cellCenter(t),CELL*0.8,'#d4a830');tip('汰换完成！最高级武器 Lv.'+grid[t].occ.lvl);}rebuild();renderTray();updateHud();}}
   else if(id==='rush'){dmgBuffMul=1.4;tempKillGoldMul=0;pendingRush=true;}
   else if(id==='allin'){const spend=gold;gold=0;const dmgAll=spend*10;if(enemies.length>0){enemies.forEach(e=>{if(e.hp>0){hit(e,dmgAll,null);}});tip('梭哈！消耗 '+spend+' 金币，造成 '+dmgAll+' 伤害');}else{pendingAllinDmg=dmgAll;tip('梭哈！消耗 '+spend+' 金币，下一波敌人将受到 '+dmgAll+' 伤害');}updateHud();}
@@ -817,6 +1291,8 @@ function tickBuffWaves(){
   atkSpdMul=1;atkRangeMul=1;
   if(hawkeyeBuffWaves>0){atkSpdMul*=0.75;atkRangeMul*=1.3;}
   if(adrenalineBuffWaves>0){atkSpdMul*=1.4;dmgBuffMul=dmgBuffMul*0.75;}
+  // 局外天赋永久加成（与战术 BUFF 乘法叠加）
+  atkSpdMul*=talentSpdMul;atkRangeMul*=talentRangeMul;dmgBuffMul*=talentDmgMul;
 }
 
 /* ============ Howler.js 音效管理 ============ */
@@ -847,7 +1323,8 @@ function sfx(k){
 let last=performance.now(), speed=1, paused=false, gameStartTime=0;
 function loop(now){let dt=(now-last)/1000;last=now;if(dt>0.05)dt=0.05;if(running&&!paused)update(dt*speed);draw();requestAnimationFrame(loop);}
 function update(dt){
-  if(started){if(bossPending){spawnBoss();bossPending=false;}if(spawnLeft>0){spawnT-=dt;if(spawnT<=0){spawnEnemy();spawnLeft--;spawnT=0.82;}}else if(enemies.length===0){const need=12+3*boxCount;started=false;
+  if(dpsPanelOpen){dpsAccum+=dt;if(dpsAccum>=0.5){dpsAccum=0;renderDpsPanel();}}
+  if(started){if(bossPending){spawnBoss();bossPending=false;}if(spawnLeft>0){spawnT-=dt;if(spawnT<=0){spawnEnemy();spawnLeft--;spawnT=0.82;}}else if(enemies.length===0){const need=Math.round((12+3*boxCount)*(1-0.02*(talentLevels.discount||0)));started=false;
     if(running&&wave%5===0&&wave>0){showBuffPanel();tip('第 '+wave+' 波清除！选择战术BUFF后继续');}
     else{setTimeout(()=>{if(running&&!buffPending)startWave();},1200);tip('第 '+wave+' 波清除！全歼即可攒够开箱 💰'+need+'（漏怪会少赚），下一波来袭…');}
     // 背锅：本波结束，移除黑锅护盾
@@ -859,33 +1336,96 @@ function update(dt){
     if(e.bleed>0){e.bleed-=dt;e._bleedTick=(e._bleedTick||0)+dt;if(e._bleedTick>=1){e._bleedTick-=1;const bd=e.bleedDps||30;const bdApplied=Math.min(bd,Math.max(0,e.hp));stats.damage+=bdApplied;const boc=e._bleedGI!=null&&grid[e._bleedGI]?grid[e._bleedGI].occ:null;if(boc){boc._dmg=(boc._dmg||0)+bdApplied;}e.hp-=bd;fx.push({type:'dmg',x:e.x+(Math.random()*8-4),y:e.y-22,val:bd,life:.8,t:.8,c:'#cc0000',small:true});if(e.hp<=0){const bw=boc?curWeapons.find(x=>x.gi===e._bleedGI):null;kill(e,bw||null);continue;}}}
     if(e.breach>0)e.breach-=dt;
     if(e.cripple>0)e.cripple-=dt;
-    if(e.stun>0){e.stun-=dt;}else{const dir=e.rev>0?-1:1;if(e.rev>0)e.rev-=dt;const spdMul=e.cripple>0?0.5:1;e.t+=dir*e.spd*spdMul*dt/PLEN;if(e.t<0)e.t=0;}
+    if(e._hitFlash&&e._hitFlash>0)e._hitFlash-=dt;
+    // BOSS 技能逻辑
+    const bossSpdMul=(e.boss&&e.bossType===0)?1.2:1;
+    if(e.boss){
+      // 全图挂(bossType=2)：免疫所有控制
+      if(e.bossType===2){e.stun=0;e.cripple=0;e.rev=0;}
+      // 锁头挂(bossType=3)：每5秒锁定最高级武器3秒
+      if(e.bossType===3){e._skillT=(e._skillT||0)+dt;if(e._skillT>=5){e._skillT=0;
+        let bestW=null,bestLv=0;for(const w of curWeapons){const lv=(w.lvl||1);if(lv>bestLv){bestLv=lv;bestW=w;}}
+        if(bestW){lockedWeapons[bestW.gi]={t:3};}}
+      }
+      // 回溯挂(bossType=4)：每5秒回溯2秒前位置+恢复10%血
+      if(e.bossType===4){e._skillT=(e._skillT||0)+dt;e._posHistory.push({x:e.x,y:e.y,t:e.t});if(e._posHistory.length>120)e._posHistory.shift();
+        if(e._skillT>=5){e._skillT=0;const target=e._posHistory[Math.max(0,e._posHistory.length-120)]||e._posHistory[0];
+          if(target){fx.push({type:'ghostText',x:e.x,y:e.y,text:e.name,life:1.0,t:1.0});e.t=target.t;const heal=Math.round(e.max*0.1);e.hp=Math.min(e.max,e.hp+heal);fx.push({type:'float',x:e.x,y:e.y-20,text:'+10% HP',life:1.2,t:1.2,c:'#33ff33'});}}
+      }
+      // 本拉登(bossType=6)：每5秒呼叫飞机
+      if(e.bossType===6){e._skillT=(e._skillT||0)+dt;if(e._skillT>=5&&!planeFx){e._skillT=0;
+        const validWs=curWeapons.filter(w=>!jammedWeapons[w.gi]);if(validWs.length>0){const tgt=validWs[rint(0,validWs.length-1)];
+          planeFx={x:-50,y:60+Math.random()*280,tx:510,ty:0,t:0,dur:2.0,targetGi:tgt.gi,hit:false};}}
+      }
+    }
+    // 移动逻辑
+    if(e.bossType===5){ // 穿墙挂：两段直线移动
+      const spd=e.spd*bossSpdMul;
+      if(e._wallPhase===0){ // 第一段：(0,0)->(0,4) 垂直向下
+        const dx=e._wp1[0]-e.x,dy=e._wp1[1]-e.y,dd=Math.hypot(dx,dy);
+        if(dd>1){e.x+=dx/dd*spd*dt;e.y+=dy/dd*spd*dt;}
+        else{e._wallPhase=1;}
+      }else{ // 第二段：(0,4)->终点 直线穿墙
+        const dx=e._wp2[0]-e.x,dy=e._wp2[1]-e.y,dd=Math.hypot(dx,dy);
+        if(dd>1){e.x+=dx/dd*spd*dt;e.y+=dy/dd*spd*dt;e.t=Math.min(1,e.t+spd*dt/PLEN);}
+        else e.t=1;
+      }
+    }else if(e.stun>0&&!(e.boss&&e.bossType===2)){e.stun-=dt;}
+    else{const dir=e.rev>0?-1:1;if(e.rev>0&&!(e.boss&&e.bossType===2))e.rev-=dt;const spdMul=(e.cripple>0&&!(e.boss&&e.bossType===2))?0.5:1;e.t+=dir*e.spd*spdMul*bossSpdMul*dt/PLEN;if(e.t<0)e.t=0;}
     if(e.t>=1){
-      if(hasPanShield){
-        // 背锅护盾：抵消伤害，不扣血
-        fxRing(...pathPos(1),36,'#2a2a2a',.5);
-      }else{
-        lives--;stats.streak=0;
-        fxRing(...pathPos(1),36,'#d6533a',.5);
-        if(highRiskBuffWaves>0){
-          // 要钱不要命：漏怪即死
-          tip('⚠ 要钱不要命！漏怪触发，游戏直接失败！');
-          lives=0;
+      if(hasPanShield){fxRing(...pathPos(1),36,'#2a2a2a',.5);}
+      else{lives--;stats.streak=0;fxRing(...pathPos(1),36,'#d6533a',.5);
+        if(highRiskBuffWaves>0){tip('⚠ 要钱不要命！漏怪触发，游戏直接失败！');lives=0;}
+        if(lives<=0){
+          if((talentLevels.revive||0)>revivesUsed){
+            revivesUsed++;
+            lives=1;
+            enemies.forEach(en=>{en._dead=true;en.hp=0;});
+            fxRing(...pathPos(1),60,'#7fae5a',.8);
+            tip('✦ 复活触发！剩余 '+((talentLevels.revive||0)-revivesUsed)+' 次复活机会');
+          }else gameOver();
         }
-        if(lives<=0)gameOver();
       }
       e.hp=0;e._dead=true;
     }
-    const p=pathPos(e.t);e.x=p[0];e.y=p[1];
+    if(e.bossType!==5){const p=pathPos(e.t);e.x=p[0];e.y=p[1];}
   }
   enemies=enemies.filter(e=>!e._dead&&e.hp>0);
   rebuild();
   // 更新 EMP 爆炸倒计时
   for(const b of empBlasts)b.t-=dt;empBlasts=empBlasts.filter(b=>b.t>0);
+  // 更新锁头挂锁定计时器
+  for(const gi in lockedWeapons){lockedWeapons[gi].t-=dt;if(lockedWeapons[gi].t<=0)delete lockedWeapons[gi];}
+  // 更新本拉登瘫痪计时器
+  for(const gi in jammedWeapons){jammedWeapons[gi].t-=dt;if(jammedWeapons[gi].t<=0)delete jammedWeapons[gi];}
+  // 更新飞机动画
+  if(planeFx){planeFx.t+=dt;const k=planeFx.t/planeFx.dur;
+    planeFx.x=-50+k*(planeFx.tx+50);
+    planeFx.y=60+Math.sin(k*Math.PI)*30+planeFx.ty;
+    if(k>=0.5&&!planeFx.hit){planeFx.hit=true;
+      // 飞机撞到目标武器
+      if(curWeapons.find(w=>w.gi===planeFx.targetGi)){jammedWeapons[planeFx.targetGi]={t:30};addShake(5);tip('✈️ 本拉登空袭！武器被瘫痪30秒！');
+        const cc=cellCenter(planeFx.targetGi);fxRing(cc[0],cc[1],40,'#666',.8);sparkBurst(cc[0],cc[1],12,'#888');}
+    }
+    if(k>=1)planeFx=null;
+  }
   for(const w of curWeapons){const pr=grid[w.gi].occ;pr.cd=(pr.cd||0)-dt;
+    // 递减攻击动画时间
+    if(pr._atkAnim&&pr._atkAnim.t>0)pr._atkAnim.t-=dt;
+    if(w.gj!=null){const pr2=grid[w.gj].occ;if(pr2&&pr2._atkAnim&&pr2._atkAnim.t>0)pr2._atkAnim.t-=dt;}
     // 检查是否在任意 EMP 爆炸范围内（200像素）
-    let jammed=false;for(const b of empBlasts){if(Math.hypot(w.cx-b.x,w.cy-b.y)<=200){jammed=true;break;}}
-    if(jammed)continue;if(pr.cd<=0){if(fire(w))pr.cd=w.def.cd*1.5/atkSpdMul;else pr.cd=0.1;}}
+    let jammed=false;
+    for(const b of empBlasts){
+      if(Math.hypot(w.cx-b.x,w.cy-b.y)<=200){jammed=true;break;}
+      // 也检查合成武器的两个格子位置
+      if(w.gj!=null){const[cx2,cy2]=cellCenter(w.gj);if(Math.hypot(cx2-b.x,cy2-b.y)<=200){jammed=true;break;}}
+    }
+    // 检查是否被本拉登瘫痪
+    if(jammedWeapons[w.gi])jammed=true;
+    if(jammed)continue;
+    // 检查是否被锁头挂锁定（伤害降50%）
+    const locked=lockedWeapons[w.gi];
+    if(pr.cd<=0){const oldDmgBuffMul=dmgBuffMul;if(locked)dmgBuffMul=dmgBuffMul*0.5;if(fire(w))pr.cd=w.def.cd*1.5/atkSpdMul;else pr.cd=0.1;dmgBuffMul=oldDmgBuffMul;}}
   for(const b of bullets){if(!b.tg||b.tg.hp<=0||b.tg._dead){b._d=true;continue;}const dx=b.tg.x-b.x,dy=b.tg.y-b.y,dd=Math.hypot(dx,dy);if(dd<12){hit(b.tg,b.dmg);if(b.burn){b.tg.burn=b.burn.d;b.tg.bdps=b.burn.dps;}b._d=true;}else{b.x+=dx/dd*b.spd*dt;b.y+=dy/dd*b.spd*dt;}}
   bullets=bullets.filter(b=>!b._d);
   for(const f of fx){f.t-=dt;if(f.type==='spark'){f.x+=f.vx*dt;f.y+=f.vy*dt;f.vx*=0.9;f.vy*=0.9;}}fx=fx.filter(f=>f.t>0);
@@ -939,6 +1479,12 @@ function gameOver(){
     G('oAceImg').src='image/'+word+'.png';G('oAceImg').style.display='';}
   else{G('oAceName').textContent='无';G('oAceFull').textContent='未部署武器';G('oAceLv').textContent='—';G('oAceImg').style.display='none';}
   G('oEval').textContent=evalRank(maxLv,combos,wave);
+  const banner=G('oTalentBanner');
+  const tpts=applyTalentReward(wave);
+  if(banner)banner.style.display=tpts>0?'flex':'none';
+  G('oTalent').textContent='0';
+  if(tpts>0)setTimeout(()=>countUpTalent(tpts),250);
+  if(typeof updateTalentRedot==='function')updateTalentRedot();
   initNick();
   const nick=localStorage.getItem('buffgo_nick');
   if(nick)upsertLB(nick,wave);            // 自动上榜
@@ -963,6 +1509,69 @@ G('oNickOk').onclick=()=>{const v=(G('oNickInput').value||'').trim();if(v.length
 G('oNickEdit').onclick=()=>{G('oNickNew').classList.remove('hide');G('oNickShow').classList.add('hide');G('oNickInput').value=localStorage.getItem('buffgo_nick')||'';};
 document.getElementById('restartBtn').onclick=()=>{paused=!paused;document.getElementById('restartBtn').textContent=paused?'▶ 继续':'⏸ 暂停';};
 document.getElementById('speedBtn').onclick=()=>{speed=speed>=3?1:speed+1;document.getElementById('speedBtn').textContent='⏩ '+speed+'x';};
+/* 返回主界面：二级确认 */
+function showBackConfirm(){
+  if(running&&!paused){paused=true;const pb=document.getElementById('restartBtn');if(pb)pb.textContent='▶ 继续';}
+  document.getElementById('backConfirm').classList.add('show');
+}
+function hideBackConfirm(){document.getElementById('backConfirm').classList.remove('show');}
+function confirmBackHome(){
+  if(talentPoints!==+(localStorage.getItem('buffgo_talent_points')||0)){
+    localStorage.setItem('buffgo_talent_points',talentPoints);
+  }
+  hideBackConfirm();
+  running=false;started=false;paused=false;enemies=[];bullets=[];fx=[];empBlasts=[];
+  const pb=document.getElementById('restartBtn');if(pb)pb.textContent='⏸ 暂停';
+  document.getElementById('over').classList.remove('show');
+  document.getElementById('cover').classList.remove('hide');
+  if(typeof sfxManager!=='undefined'&&sfxManager.stopAll)sfxManager.stopAll();
+  if(typeof tip==='function')tip('已返回主界面');
+}
+document.getElementById('backBtn').onclick=showBackConfirm;
+document.querySelector('#backConfirm .bc-cancel').onclick=hideBackConfirm;
+document.querySelector('#backConfirm .bc-ok').onclick=confirmBackHome;
+document.getElementById('backConfirm').onclick=(ev)=>{if(ev.target.id==='backConfirm')hideBackConfirm();};
+
+/* ============ DPS 实时伤害统计 ============ */
+let dpsPanelOpen=false, dpsAccum=0;
+function fmtDmg(n){
+  if(n>=1e6)return(n/1e6).toFixed(1)+'M';
+  if(n>=1e3)return(n/1e3).toFixed(1)+'k';
+  return Math.round(n).toString();
+}
+function renderDpsPanel(){
+  if(!dpsPanelOpen)return;
+  const list=document.getElementById('dpsList');if(!list)return;
+  if(!curWeapons||curWeapons.length===0){list.innerHTML='<div class="dp-empty">尚无武器</div>';document.getElementById('dpsTotal').textContent='0';return;}
+  const items=curWeapons.map(w=>({
+    name:w.def.n, lvl:(w.lvl||1),
+    dmg:(w._dmg||0), gi:w.gi, gj:w.gj!=null?w.gj:null
+  })).filter(x=>x.dmg>0).sort((a,b)=>b.dmg-a.dmg);
+  const top=items.slice(0,5);
+  const total=items.reduce((s,x)=>s+x.dmg,0);
+  document.getElementById('dpsTotal').textContent=fmtDmg(total);
+  if(top.length===0){list.innerHTML='<div class="dp-empty">暂无伤害数据</div>';return;}
+  const max=top[0].dmg;
+  list.innerHTML=top.map(x=>{
+    const pct=total>0?Math.round(x.dmg/total*100):0;
+    const barW=max>0?Math.round(x.dmg/max*100):0;
+    return '<div class="dp-row"><div class="dp-bar" style="width:'+barW+'%"></div>'+
+      '<div class="dp-txt"><span class="dp-name">'+x.name+' Lv'+x.lvl+'</span>'+
+      '<span class="dp-val">'+fmtDmg(x.dmg)+' '+pct+'%</span></div></div>';
+  }).join('');
+}
+function toggleDpsPanel(){
+  dpsPanelOpen=!dpsPanelOpen;
+  const btn=document.getElementById('dpsBtn'),panel=document.getElementById('dpsPanel');
+  if(dpsPanelOpen){btn.classList.add('active');panel.classList.add('show');renderDpsPanel();}
+  else{btn.classList.remove('active');panel.classList.remove('show');}
+}
+document.getElementById('dpsBtn').onclick=(ev)=>{ev.stopPropagation();toggleDpsPanel();};
+document.addEventListener('click',(ev)=>{
+  if(!dpsPanelOpen)return;
+  const panel=document.getElementById('dpsPanel'),btn=document.getElementById('dpsBtn');
+  if(!panel.contains(ev.target)&&!btn.contains(ev.target))toggleDpsPanel();
+});
 
 /* ============ 渲染（国风土黄写意）============ */
 function draw(){
@@ -982,12 +1591,20 @@ function draw(){
       if(sh&&!cell.open){X.strokeStyle='#c8862e';X.lineWidth=2.5;rrect(gx+3,gy+3,CELL-6,CELL-6,6);X.stroke();}
       if(!sh&&cell.open&&!cell.occ){X.strokeStyle='#3f8f3a';X.lineWidth=2.5;rrect(gx+3,gy+3,CELL-6,CELL-6,6);X.stroke();}}
     if(cell.occ){if(role[i])drawComboChar(cell.occ,gx,gy,W[role[i].wid].tier);else if(ATK[cell.occ.key])drawAtk(cell.occ,gx,gy);else drawRaw(cell.occ,gx,gy);}
+    // 锁头挂锁定角标
+    if(lockedWeapons[i]){X.font='bold 9px sans-serif';X.fillStyle='#ff3333';X.textAlign='center';X.textBaseline='middle';X.fillText('[锁]',gx+CELL-10,gy+8);}
+    // 本拉登瘫疣角标+深灰底色
+    if(jammedWeapons[i]){X.fillStyle='rgba(60,60,60,0.5)';rrect(gx+3,gy+3,CELL-6,CELL-6,5);X.fill();X.font='bold 9px sans-serif';X.fillStyle='#999';X.textAlign='center';X.textBaseline='middle';X.fillText('[瘫]',gx+CELL-10,gy+8);}
   }
   drawBoardFrame();
   for(const w of curWeapons)if(w.gj!=null)drawComboFrame(w);
   if(hoverCell>=0){const w=curWeapons.find(w=>w.gi===hoverCell||w.gj===hoverCell);if(w)drawRange(w);}
   if(drag&&drag.occ)drawDragGhost();
   drawEnemies(); drawBullets(); for(const f of fx)drawFx(f);
+  // 飞机动画
+  if(planeFx){X.save();X.globalAlpha=0.9;X.font='20px serif';X.textAlign='center';X.textBaseline='middle';X.fillText('✈️',planeFx.x,planeFx.y);X.restore();
+    // 尾迹
+    X.save();X.globalAlpha=0.3;X.strokeStyle='#ccc';X.lineWidth=2;X.beginPath();X.moveTo(planeFx.x-30,planeFx.y);X.lineTo(planeFx.x,planeFx.y);X.stroke();X.restore();}
   if(trayDrag&&trayDrag.moved&&trayDrag.inside){const p=tray[trayDrag.i];if(p&&!p.used){const[ch]=pieceLabel(p.key);X.save();X.globalAlpha=.85;inkText(ch,trayDrag.cx,trayDrag.cy,charColor(p.key),30);X.restore();}}
   X.restore();
 }
@@ -1125,10 +1742,13 @@ function drawRaw(o,gx,gy){
 function drawAtk(o,gx,gy){
   const w=W[ATK[o.key]],col=TIER.BLUE,cx=gx+CELL/2;
   X.save();X.shadowColor=col;X.shadowBlur=6;X.lineWidth=2.4;X.strokeStyle=col;rrect(gx+4,gy+4,CELL-8,CELL-8,6);X.stroke();X.restore();
-  inkText(o.key,cx,gy+CELL/2-5,'#2b241c',30);
+  if(applyAtkAnim(o,cx,gy+CELL/2-5)){inkText(o.key,cx,gy+CELL/2-5,'#2b241c',30);X.restore();}else inkText(o.key,cx,gy+CELL/2-5,'#2b241c',30);
   X.font='900 10px sans-serif';X.fillStyle='#a8791f';X.textAlign='center';X.textBaseline='middle';X.fillText('Lv'+(o.lvl||1),cx,gy+CELL-12);
 }
-function drawComboChar(o,gx,gy,tier){inkText(o.key,gx+CELL/2,gy+CELL/2-2,TIER[tier],30);}
+function drawComboChar(o,gx,gy,tier){
+  const cx=gx+CELL/2,cy=gy+CELL/2-2;
+  if(applyAtkAnim(o,cx,cy)){inkText(o.key,cx,cy,TIER[tier],30);X.restore();}else inkText(o.key,cx,cy,TIER[tier],30);
+}
 function drawComboFrame(w){
   const gi=w.gi,gj=w.gj,dir=w.dir||'h';
   const ax=BX+(gi%COLS)*CELL,ay=BY+((gi/COLS)|0)*CELL,bx=BX+(gj%COLS)*CELL,by=BY+((gj/COLS)|0)*CELL;
@@ -1145,18 +1765,33 @@ function drawComboFrame(w){
 function drawEnemies(){
   for(const e of enemies){
     X.textAlign='center';X.textBaseline='middle';
+    // 受击闪烁覆盖色
+    const hf=e._hitFlash&&e._hitFlash>0;
+    const hcol=hf?'#ff4444':null;
+    const hdx=hf?(Math.random()*4-2):0;
     if(e.boss){
       const t=(performance.now()/500)%1;
       for(let i=0;i<2;i++){const rp=(t+i*0.5)%1;X.strokeStyle='rgba(214,60,40,'+(0.55*(1-rp)).toFixed(3)+')';X.lineWidth=3;X.beginPath();X.arc(e.x,e.y,22+rp*26,0,7);X.stroke();}
-      X.save();X.shadowColor='#ff3b1a';X.shadowBlur=18;inkText(e.name,e.x,e.y,e.burn>0?'#c8501f':'#8a1010',e.name.length>=2?20:26);X.restore();
-      if(e.stun>0){X.font='14px serif';X.fillText('🌸',e.x+20,e.y-16);}
-      if(e.rev>0){X.font='14px serif';X.fillText('💘',e.x-20,e.y-16);}
-      if(e.cripple>0){X.font='bold 11px sans-serif';X.fillStyle='#ffd633';X.fillText('瘫',e.x+22,e.y+10);}
+      const bcol=hcol||(e.burn>0?'#c8501f':'#8a1010');
+      // BOSS特定视觉
+      if(e.bossType===1){ // 陀螺挂：旋转
+        X.save();X.translate(e.x+hdx,e.y);X.rotate(performance.now()/100);X.shadowColor='#ff3b1a';X.shadowBlur=18;inkText(e.name,0,0,bcol,e.name.length>=2?20:26);X.restore();
+      }else if(e.bossType===5){ // 穿墙挂：半透明
+        X.save();X.globalAlpha=0.7;X.shadowColor='#ff3b1a';X.shadowBlur=18;inkText(e.name,e.x+hdx,e.y,bcol,e.name.length>=2?20:26);X.restore();
+      }else{
+        X.save();X.shadowColor='#ff3b1a';X.shadowBlur=18;inkText(e.name,e.x+hdx,e.y,bcol,e.name.length>=2?20:26);X.restore();
+      }
+      // 全图挂：金色[霸]角标
+      if(e.bossType===2){X.font='bold 11px sans-serif';X.fillStyle='#ffd700';X.fillText('[霸]',e.x+28,e.y-18);}
+      if(e.stun>0&&e.bossType!==2){X.font='14px serif';X.fillText('🌸',e.x+20,e.y-16);}
+      if(e.rev>0&&e.bossType!==2){X.font='14px serif';X.fillText('💘',e.x-20,e.y-16);}
+      if(e.cripple>0&&e.bossType!==2){X.font='bold 11px sans-serif';X.fillStyle='#ffd633';X.fillText('瘫',e.x+22,e.y+10);}
       if(e.breach>0){X.font='bold 11px sans-serif';X.fillStyle='#ffd700';X.fillText('破',e.x+24,e.y-18);}
       const w=46,hpr=Math.max(0,e.hp/e.max);X.fillStyle='rgba(40,20,10,.65)';X.fillRect(e.x-w/2,e.y-30,w,5);X.fillStyle=hpr>0.5?'#c0392b':hpr>0.25?'#d2a24c':'#8a1010';X.fillRect(e.x-w/2,e.y-30,w*hpr,5);
       continue;
     }
-    if(e.elite){X.save();X.shadowColor='#9b30ff';X.shadowBlur=15;inkText('匪',e.x,e.y,'#9b30ff',24);X.restore();}
+    if(e.elite){X.save();X.shadowColor='#9b30ff';X.shadowBlur=15;inkText('精',e.x+hdx,e.y,hcol||'#9b30ff',24);X.restore();}
+    else if(hf){X.save();X.shadowColor='#ff4444';X.shadowBlur=13;inkText('匪',e.x+hdx,e.y,hcol,24);X.restore();}
     else if(e.burn>0){X.save();X.shadowColor='#ff6b1a';X.shadowBlur=13;inkText('匪',e.x,e.y,'#c8501f',24);X.restore();}
     else if(e.cripple>0){X.save();X.globalAlpha=0.4+0.4*Math.abs(Math.sin(performance.now()/200));X.shadowColor='#e6b800';X.shadowBlur=10;inkText('匪',e.x,e.y,'#b89000',24);X.restore();}
     else inkText('匪',e.x,e.y,'#8a2020',24);
@@ -1197,6 +1832,8 @@ function drawFx(f){const a=f.t/f.life;
   else if(f.type==='dmg'){X.globalAlpha=Math.min(1,a*1.5);X.font='900 '+(f.crit?'16px':f.small?'9px':'12px')+' sans-serif';X.fillStyle=f.crit?'#ffd700':f.small?'#cc0000':'#7a2818';X.textAlign='center';X.fillText((f.crit?'💥':'')+'-'+f.val,f.x,f.y-(1-a)*18);X.globalAlpha=1;}
   else if(f.type==='lotus'){X.globalAlpha=a;X.font='17px serif';X.textAlign='center';X.textBaseline='middle';X.fillText('🌸',f.x,f.y);X.globalAlpha=1;}
   else if(f.type==='heart'){X.globalAlpha=a;X.font='17px serif';X.textAlign='center';X.textBaseline='middle';X.fillText('💘',f.x,f.y-(1-a)*14);X.globalAlpha=1;}
+  else if(f.type==='float'){X.globalAlpha=Math.min(1,a*1.5);X.font='bold 11px sans-serif';X.fillStyle=f.c||'#fff';X.textAlign='center';X.textBaseline='middle';X.fillText(f.text||'',f.x,f.y-(1-a)*20);X.globalAlpha=1;}
+  else if(f.type==='ghostText'){X.globalAlpha=a*0.4;X.font=(f.text&&f.text.length>=2?20:26)+'px "KaiTi","STKaiti",serif';X.fillStyle='#8a1010';X.textAlign='center';X.textBaseline='middle';X.fillText(f.text||'',f.x,f.y);X.globalAlpha=1;}
 }
 function rrect(x,y,w,h,r){X.beginPath();X.moveTo(x+r,y);X.arcTo(x+w,y,x+w,y+h,r);X.arcTo(x+w,y+h,x,y+h,r);X.arcTo(x,y+h,x,y,r);X.arcTo(x,y,x+w,y,r);X.closePath();}
 
@@ -1204,6 +1841,7 @@ function rrect(x,y,w,h,r){X.beginPath();X.moveTo(x+r,y);X.arcTo(x+w,y,x+w,y+h,r)
 function toXY(ev){const r=CV.getBoundingClientRect();return[(ev.clientX-r.left)*(460/r.width),(ev.clientY-r.top)*(400/r.height)];}
 function cellAt(px,py){if(px<BX||px>=BX+COLS*CELL||py<BY||py>=BY+ROWS*CELL)return-1;const c=((px-BX)/CELL)|0,r=((py-BY)/CELL)|0;return idx(c,r);}
 CV.addEventListener('pointerdown',ev=>{audio();const[px,py]=toXY(ev),ci=cellAt(px,py);if(ci<0)return;
+  if(jammedWeapons[ci]){tip('该武器被空袭瘫痪中，无法操作！');return;}
   if(grid[ci].occ){drag={from:ci,occ:grid[ci].occ,x:px,y:py};sel=-1;renderTray();tip('拖到白格换位；拖到同名同级武器字可升级');CV.setPointerCapture(ev.pointerId);}
   else placeAt(ci);
 });
@@ -1211,7 +1849,7 @@ CV.addEventListener('pointermove',ev=>{if(!drag)return;const[px,py]=toXY(ev);dra
 function returnToTray(o){
   const piece={key:o.key,lvl:o.lvl||1,used:false};
   let slot=tray.findIndex(p=>p.used);
-  if(slot<0&&tray.length<5)slot=tray.push({used:true})-1;
+  if(slot<0&&tray.length<5+(talentLevels.candidate||0))slot=tray.push({used:true})-1;
   if(slot<0){tip('候选区已满，无法收回');return false;}
   tray[slot]=piece;renderTray();return true;
 }
@@ -1393,8 +2031,170 @@ const TUT=(()=>{
 })();
 window.TUT=TUT;
 
+/* ============ 局外天赋强化系统 ============ */
+const TALENT_LIST=[
+  {id:'gold',     name:'初始金币',   icon:'./icon/gold.png',      effect:'每次 +5 初始金币',                          cost:[4,4,4,4,4,4,4,4,4,4], max:10},
+  {id:'grid',     name:'初始格子',   icon:'./icon/grid.png',      effect:'每次解锁 1 个初始格子',                      cost:[20,30,40,50], max:4},
+  {id:'hp',       name:'人质血量',   icon:'./icon/hp.png',        effect:'每次 +1 人质血量',                          cost:[20,30,40], max:3},
+  {id:'discount', name:'开箱价格',   icon:'./icon/discount.png',  effect:'每次 -2% 开箱价格',                         cost:[10,20,30,40,50], max:5},
+  {id:'attack',   name:'攻击力',     icon:'./icon/attack.png',    effect:'每次 +1% 武器攻击力',                       cost:[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4], max:20},
+  {id:'range',    name:'射程',       icon:'./icon/range.png',     effect:'每次 +1% 武器射程',                         cost:[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4], max:20},
+  {id:'speed',    name:'攻速',       icon:'./icon/sepeed.png',    effect:'每次 +1% 武器攻速',                         cost:[4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4], max:20},
+  {id:'candidate',name:'备选武器栏', icon:'./icon/candidate.png', effect:'增加 1 个候选区格子',                       cost:[80], max:1},
+  {id:'kill_gold',name:'杀敌金币',   icon:'./icon/kill_gold.png', effect:'杀敌额外掉落 1 金钱（不受战术 buff 影响）',  cost:[80], max:1},
+  {id:'revive',   name:'复活',       icon:'./icon/revive.png',    effect:'增加 1 次复活次数',                         cost:[80], max:1},
+];
+const EXTRA_OPEN_CELLS=[[1,2],[6,2],[1,1],[6,1]];
+let talentPoints=0, talentLevels={}, revivesUsed=0;
+let talentDmgMul=1, talentRangeMul=1, talentSpdMul=1;
+function loadTalent(){
+  talentPoints=+(localStorage.getItem('buffgo_talent_points')||0);
+  try{talentLevels=JSON.parse(localStorage.getItem('buffgo_talent_levels')||'{}');}catch(e){talentLevels={};}
+  if(!talentLevels||typeof talentLevels!=='object')talentLevels={};
+}
+function saveTalent(){
+  localStorage.setItem('buffgo_talent_points',talentPoints);
+  localStorage.setItem('buffgo_talent_levels',JSON.stringify(talentLevels));
+}
+function recalcTalentMul(){
+  talentDmgMul=1+0.01*(talentLevels.attack||0);
+  talentRangeMul=1+0.01*(talentLevels.range||0);
+  talentSpdMul=1+0.01*(talentLevels.speed||0);
+}
+function applyTalents(){
+  gold=12+5*(talentLevels.gold||0);
+  lives=3+(talentLevels.hp||0);
+  revivesUsed=0;
+  recalcTalentMul();
+}
+function grantTalentReward(finalWave){
+  let pts=0;
+  for(let w=5;w<=finalWave;w+=5){pts+=(w>30)?3:2;}
+  let ms=[];try{ms=JSON.parse(localStorage.getItem('buffgo_talent_milestones')||'[]');}catch(e){ms=[];}
+  for(let m=10;m<=finalWave;m+=10){if(!ms.includes(m)){pts+=5;ms.push(m);}}
+  localStorage.setItem('buffgo_talent_milestones',JSON.stringify(ms));
+  return pts;
+}
+function applyTalentReward(finalWave){
+  const pts=grantTalentReward(finalWave);
+  if(pts>0){talentPoints+=pts;localStorage.setItem('buffgo_talent_points',talentPoints);}
+  return pts;
+}
+function countUpTalent(target){
+  const el=G('oTalent');if(!el)return;
+  if(el._cu)cancelAnimationFrame(el._cu);
+  if(target<=0){el.textContent='0';return;}
+  const dur=900;const t0=performance.now();
+  const step=(now)=>{
+    const k=Math.min(1,(now-t0)/dur);
+    const e=1-Math.pow(1-k,3);
+    el.textContent=Math.round(target*e);
+    if(k<1)el._cu=requestAnimationFrame(step);else el._cu=null;
+  };
+  el._cu=requestAnimationFrame(step);
+}
+loadTalent();recalcTalentMul();
+/* ---- 天赋弹窗交互 ---- */
+let talentDraft=null, talentDraftPts=0;
+function updateTalentRedot(){
+  const dot=document.getElementById('talentRedot');if(!dot)return;
+  if(talentPoints>0){dot.textContent='+'+talentPoints;dot.style.display='block';}
+  else dot.style.display='none';
+}
+function openTalentModal(){
+  talentDraft=Object.assign({},talentLevels);
+  talentDraftPts=talentPoints;
+  document.getElementById('talentOverlay').classList.add('show');
+  document.getElementById('talentHelpPopup').classList.remove('show');
+  renderTalentModal();
+}
+function closeTalentModal(){
+  document.getElementById('talentOverlay').classList.remove('show');
+  document.getElementById('talentTooltip').classList.remove('show');
+  document.getElementById('talentHelpPopup').classList.remove('show');
+}
+function talentToast(msg){
+  const t=document.getElementById('talentToast');if(!t)return;
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(t._tm);t._tm=setTimeout(()=>t.classList.remove('show'),1200);
+}
+function renderTalentModal(){
+  document.getElementById('talentPts').textContent=talentDraftPts;
+  const grid=document.getElementById('talentGrid');
+  grid.innerHTML='';
+  TALENT_LIST.forEach(t=>{
+    const lvl=talentDraft[t.id]||0;
+    const maxed=lvl>=t.max;
+    const cost=maxed?null:t.cost[lvl];
+    const canBuy=!maxed&&cost!=null&&talentDraftPts>=cost;
+    let dotsHtml='';
+    for(let i=0;i<t.max;i++){dotsHtml+='<span class="tc-dot'+(i<lvl?' on':'')+'"></span>';}
+    const cell=document.createElement('div');
+    cell.className='tc'+(maxed?' maxed':'')+(canBuy?' can-up':'');
+    cell.innerHTML=
+      '<div class="tc-icon-wrap"><img class="tc-img" src="'+t.icon+'" alt=""></div>'+
+      '<div class="tc-body">'+
+        '<div class="tc-row1"><span class="tc-name">'+t.name+'</span><span class="tc-lv">'+(maxed?'MAX':('Lv.'+lvl))+'</span></div>'+
+        '<div class="tc-dots">'+dotsHtml+'</div>'+
+        '<button class="tc-add'+(canBuy?'':' disabled')+'" '+(canBuy?'':'disabled')+' aria-label="加点">+</button>'+
+      '</div>';
+    const img=cell.querySelector('.tc-img');img.onerror=function(){this.style.visibility='hidden';};
+    cell.onmouseenter=(ev)=>showTalentTip(t,lvl,cost,ev);
+    cell.onmousemove=(ev)=>showTalentTip(t,lvl,cost,ev);
+    cell.onmouseleave=()=>document.getElementById('talentTooltip').classList.remove('show');
+    const addBtn=cell.querySelector('.tc-add');
+    addBtn.onclick=(ev)=>{
+      ev.stopPropagation();
+      if(maxed){talentToast('该天赋已满级');return;}
+      if(cost==null||talentDraftPts<cost){talentToast('天赋点不足');return;}
+      talentDraftPts-=cost;talentDraft[t.id]=lvl+1;
+      if(typeof audio==='function')audio();
+      addBtn.classList.remove('shake');void addBtn.offsetWidth;addBtn.classList.add('shake');
+      renderTalentModal();
+    };
+    grid.appendChild(cell);
+  });
+}
+function showTalentTip(t,lvl,cost,ev){
+  const tip=document.getElementById('talentTooltip');
+  const maxed=lvl>=t.max;
+  tip.innerHTML='<b>'+t.name+'</b><div class="tt-effect">'+t.effect+'</div><div class="tt-lv">当前等级：Lv.'+lvl+' / '+t.max+'</div><div class="tt-cost">升级消耗：'+(maxed?'已达上限':(cost!=null?cost+' 点':'—'))+'</div>';
+  tip.classList.add('show');
+  let x=ev.clientX+14,y=ev.clientY+14;
+  const tw=tip.offsetWidth,th=tip.offsetHeight;
+  if(x+tw>window.innerWidth)x=ev.clientX-tw-8;
+  if(y+th>window.innerHeight)y=ev.clientY-th-8;
+  tip.style.left=Math.max(2,x)+'px';tip.style.top=Math.max(2,y)+'px';
+}
+function resetTalentDraft(){
+  talentDraft=Object.assign({},talentLevels);
+  talentDraftPts=talentPoints;
+  renderTalentModal();
+  talentToast('已重置为已保存的加点');
+}
+function saveTalentDraft(){
+  talentLevels=Object.assign({},talentDraft);
+  talentPoints=talentDraftPts;
+  saveTalent();recalcTalentMul();updateTalentRedot();
+  closeTalentModal();
+  if(typeof tip==='function')tip('天赋加点已保存，开战后生效');
+}
+document.getElementById('talentResetBtn').onclick=resetTalentDraft;
+document.getElementById('talentSaveBtn').onclick=saveTalentDraft;
+document.getElementById('talentCloseBtn').onclick=closeTalentModal;
+document.getElementById('talentHelpBtn').onclick=(ev)=>{
+  ev.stopPropagation();
+  document.getElementById('talentHelpPopup').classList.toggle('show');
+  document.getElementById('talentTooltip').classList.remove('show');
+};
+document.getElementById('talentOverlay').onclick=(ev)=>{
+  if(ev.target.id==='talentOverlay')closeTalentModal();
+};
+updateTalentRedot();
+
 /* ============ 启动 ============ */
-document.getElementById('goBtn').onclick=()=>{audio();if(typeof Howler!=='undefined'&&Howler.ctx&&Howler.ctx.state==='suspended')Howler.ctx.resume();document.getElementById('cover').classList.add('hide');TUT.maybeStart();};
+document.getElementById('talentBtn').onclick=()=>{audio();openTalentModal();};
+document.getElementById('goBtn').onclick=()=>{audio();if(typeof Howler!=='undefined'&&Howler.ctx&&Howler.ctx.state==='suspended')Howler.ctx.resume();reset();document.getElementById('cover').classList.add('hide');TUT.maybeStart();};
 reset();
 initBuffUI();
 requestAnimationFrame(loop);
